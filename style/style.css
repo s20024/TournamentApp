@@ -1,0 +1,444 @@
+html {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+}
+
+.body_div {
+  width: 100vw;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center 43%;
+  background-size: cover;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+#index_div {
+  background-image: url("../images/console.jpg");
+}
+
+
+#all_div {
+  background-image: url("./images/play.jpg");
+}
+
+#make_div {
+  background-image: url("./images/make.jpg");
+}
+
+#participation_div {
+  background-image: url("./images/join.jpg");
+}
+
+#tournament_div {
+  background-image: url("./image/trophy.jpg");
+}
+
+.text_white {
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.text_purple {
+  font-weight: 900;
+  -webkit-text-stroke: 2px #cc5be0;
+  color: #dab3ef;
+}
+
+.text_red {
+  font-weight: 900;
+  -webkit-text-stroke: 2px #f90000;
+  color: #e6da35;
+}
+
+.text_green {
+  font-weight: 900;
+  -webkit-text-stroke: 2px #51e15b;
+  color: #b3d3ac;
+}
+
+.text_yellow {
+  font-weight: 900;
+  -webkit-text-stroke: 2px #d3c224;
+  color: #d7d325;
+}
+
+.text_blue {
+  font-weight: 900;
+  -webkit-text-stroke: 2px #3abed9;
+  color: #acdadf;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+ul, li {
+  list-style: none;
+}
+
+/* Header ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+#header_div {
+  height: 100vh;
+}
+
+#header {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.header_inner {
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: inherit;
+  position: relative;
+}
+
+#header_icon {
+  margin: 5px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  flex: 2;
+}
+
+#header_title {
+  flex: 3;
+}
+
+.header_contents_item {
+  text-align: center;
+  flex: 1;
+  font-size: 26px;
+}
+
+
+@media screen and (min-width: 960px) {
+  .header_title {
+    width: 120px;
+  }
+}
+
+.header_nav {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 50vh;
+  transform: translateX(100%);
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: ease .4s;
+  backdrop-filter: blur(5px);
+}
+
+
+@media screen and (min-width: 960px) {
+  .header_nav {
+    position: static;
+    transform: initial;
+    background-color: inherit;
+    height: inherit;
+    display: flex;
+    justify-content: end;
+    width: 50%;
+    backdrop-filter: blur(0px);
+  }
+}
+
+
+@media screen and (min-width: 960px) {
+  .nav_items {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: initial;
+    justify-content: space-between;
+    text-align: center;
+    flex: 1;
+    font-size: 26px;
+  }
+}
+
+.nav-items {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0;
+}
+
+
+@media screen and (min-width: 960px) {
+  .nav-items {
+    padding-top: inherit;
+    padding-bottom: inherit;
+    position: inherit;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+  }
+}
+
+/* ハンバーガーメニュー */
+.header_hamburger {
+  width: 48px;
+  height: 100%;
+}
+
+.hamburger {
+  background-color: transparent;
+  border-color: transparent;
+  z-index: 9999;
+}
+
+@media screen and (min-width: 960px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+.hamburger span {
+  width: 100%;
+  height: 1px;
+  background-color: #ffffff;
+  position: relative;
+  transition: ease .4s;
+  display: block;
+}
+
+.hamburger span:nth-child(1) {
+  top: 0;
+}
+
+.hamburger span:nth-child(2) {
+  margin: 8px 0;
+}
+
+.hamburger span:nth-child(3) {
+  top: 0;
+}
+
+
+/* ハンバーガーメニュークリック後のスタイル */
+.header_nav.active {
+  transform: translateX(0);
+}
+
+.hamburger.active span:nth-child(1) {
+  top: 5px;
+  transform: rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+
+}
+
+.hamburger.active span:nth-child(3) {
+  top: -13px;
+  transform: rotate(-45deg);
+}
+
+/* Header ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* Contents ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+#contents_inner {
+  height: 70vh;
+  width: 100vw;
+}
+
+#contents_frame {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
+  border-radius: 30px;
+  margin: 20px;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#contents_contents {
+  height: 100%;
+  width: 93%;
+  overflow: auto;
+}
+
+#contents_contents::-webkit-scrollbar {
+  display: initial;
+  width: 15px;
+  height: 15px;
+}
+
+#contents_contents::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  height: 500px;
+}
+
+#contents_contents::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+}
+
+.contents_title {
+  background-color: rgba(255, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contents_title h1 {
+  margin-bottom: 0;
+}
+
+.contents_contents {
+  background-color: rgba(0, 255, 0, 0.3);
+  border-radius: 20px;
+  border-style: dotted;
+}
+
+#target {
+  display: none;
+}
+
+#make_organizer_title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#make_tournament_title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#make_organizer_title h1 {
+  margin-bottom: 0;
+}
+
+#make_tournament_title h1 {
+  margin-bottom: 0;
+}
+
+#make_organizer_contents {
+  background-color: rgba(0, 255, 0, 0.3);
+}
+
+#make_tournament_contents {
+  background-color: rgba(0, 255, 0, 0.3);
+}
+
+.make_contents_cell {
+  display: flex;
+}
+
+.make_contents_label {
+  flex: 1;
+  text-align: right;
+}
+
+.make_contents_input {
+  flex: 3;
+}
+
+.center {
+  text-align: center;
+}
+
+/* Contents ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* Footer ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+#footer {
+  margin-top: 2vh;
+  padding-bottom: 25px;
+  width: 100%;
+}
+
+#footer_inner {
+  padding: 0 20px;
+  color: white;
+}
+
+#footer_title {
+  font-size: 15px;
+  text-align: center;
+}
+
+#footer_title h1 {
+  margin: 0;
+}
+
+#footer_contents {
+  margin: 0;
+  display: flex;
+}
+
+#footer_contents_first {
+  flex: 3;
+}
+
+#footer_github {
+  flex: 1;
+  text-align: center;
+}
+
+#footer_github a {
+  color: #ffffff;
+}
+
+#footer_contents_middle {
+  flex: 2;
+}
+
+#footer_email {
+  flex: 1;
+  text-align: center;
+}
+
+#footer_email a {
+  color: #ffffff;
+}
+
+#footer_contents_last {
+  flex: 3;
+}
+
+#footer_footer {
+  display: flex;
+  margin-top: 3px;
+}
+
+#footer_cw {
+  flex: 1;
+}
+
+#footer_katemangostar {
+  flex: 3;
+  text-align: right;
+}
+
+#footer_katemangostar a {
+  color: lightgreen;
+}
+
+
+/* Footer ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
