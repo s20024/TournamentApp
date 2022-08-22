@@ -25,19 +25,19 @@ html::-webkit-scrollbar {
 
 
 #all_div {
-  background-image: url("./images/play.jpg");
+  background-image: url("../images/play.jpg");
 }
 
 #make_div {
-  background-image: url("./images/make.jpg");
+  background-image: url("../images/make.jpg");
 }
 
 #participation_div {
-  background-image: url("./images/join.jpg");
+  background-image: url("../images/join.jpg");
 }
 
 #tournament_div {
-  background-image: url("./image/trophy.jpg");
+  background-image: url("../image/trophy.jpg");
 }
 
 .text_white {
