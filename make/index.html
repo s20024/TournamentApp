@@ -3,18 +3,197 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="./images/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <title>Tournament App</title>
+    <link rel="apple-touch-icon" href="./images/logo192.png" />
+    <link rel="manifest" href="./images/manifest.json" />
+    <title>Tournament App Make</title>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="title_div" class="body_div">
+      <div id="header_div">
+        <header id="header">
+          <div class="header_inner">
+            <div id="header_icon_div">
+              <img id="header_icon" src="./images/icon.jpg" alt="icon" />
+            </div>
+            <div id="header_title">
+              <h1>
+                <a class="text_purple" href="https://s20024.github.io/TournamentApp">TournamentApp</a>
+              </h1>
+            </div>
+    
+            <nav class="header_nav" id="nav">
+              <ul class="nav_items nav-items">
+                <li class="nav-items_item header_contents_item">
+                  <a href="https://s20024.github.io/TournamentApp/all" class="text_red">All</a>
+                </li>
+                <li class="header_contents_item">
+                  <a href="https://s20024.github.io/TournamentApp/make" class="text_green">Make</a>
+                </li>
+                <li class="header_contents_item">
+                  <a href="https://s20024.github.io/TournamentApp/participation" class="text_yellow">Participation</a>
+                </li>
+                <li class="header_contents_item">
+                  <a href="https://s20024.github.io/TournamentApp/tournament" class="text_blue">Tournament</a>
+                </li>
+              </ul>
+            </nav>
+            <button class="header_hamburger hamburger" id="btn_hamburger" onClick={this.handleClickHamburger}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </header>
+      </div>
+      <div id="contents_div">
+        <div id="make">
+          <div className="contents_title">
+            <div className="contents_title_contents">
+              <h1>Make Tournament!!</h1>
+            </div>
+          </div>
+          <div className="contents_contents">
+            <form action="" id="form" method="post" target="target">
+              <div id="make_organizer">
+                <div id="make_organizer_title">
+                  <h1>主催者</h1>
+                </div>
+                <div id="make_organizer_contents">
+                  <div className="make_contents_cell">
+                    <div className="make_contents_label">
+                      <label>Name:</label>
+                    </div>
+                    <div className="make_contents_input">
+                      <input type="text" name="name" id="input_name" />
+                    </div>
+                  </div>
+                  <div className="make_contents_cell">
+                    <div className="make_contents_label">
+                      <label>Email:</label>
+                    </div>
+                    <div className="make_contents_input">
+                      <input type="email" name="email" id="input_email" /> </div>
+                  </div>
+                </div>
+              </div>
+              <div id="make_tournament">
+                <div id="make_tournament_title">
+                  <h1>大会詳細</h1>
+                </div>
+                <div id="make_tournament_contents">
+                  <div className="make_contents_cell">
+                    <div className="make_contents_label">
+                      <label>Title:</label>
+                    </div>
+                    <div className="make_contents_input">
+                      <input type="text" name="title" id="input_title" />
+                    </div>
+                  </div>
+                  <div className="make_contents_cell">
+                    <div className="make_contents_label">
+                      <label>大会アイコン:</label>
+                    </div>
+                    <div className="make_contents_input">
+                      <input type="file" name="image" id="input_image" />
+                    </div>
+                  </div>
+                  <div className="make_contents_cell">
+                    <div className="make_contents_label">
+                      <label>開催日:</label>
+                    </div>
+                    <div className="make_contents_input">
+                      <input type="date" name="date" id="input_date" />
+                    </div>
+                  </div>
+                  <div className="make_contents_cell">
+                    <div className="make_contents_label">
+                      <label>締め切り:</label>
+                    </div>
+                    <div className="make_contents_input">
+                      <input type="date" name="entry_day" id="input_entry_day" />
+                    </div>
+                  </div>
+                  <div className="make_contents_cell">
+                    <div className="make_contents_label">
+                      <label>グループ数:</label>
+                    </div>
+                    <div className="make_contents_input">
+                      <input type="number" name="group_number" id="input_group_number" />
+                    </div>
+                  </div>
+                  <div className="make_contents_cell">
+                    <div className="make_contents_label">
+                      <label>グループ人数:</label>
+                    </div>
+                    <div className="make_contents_input">
+                      <input type="number" name="group_number_people" id="input_group_number_people" />
+                    </div>
+                  </div>
+                  <div className="make_contents_cell">
+                    <div className="make_contents_label">
+                      <label>大会の種類:</label>
+                    </div>
+                    <div className="make_contents_input">
+                      <label>トーナメント</label>
+                      <input type="radio" name="tournament_type" id="input_tournament_type" value="tournament" />
+                      <label>ポイント制</label>
+                      <input type="radio" name="tournament_type" id="input_tournament_type" value="point" />
+                      <label>総当たり戦</label>
+                      <input type="radio" name="tournament_type" id="input_tournament_type" value="round-robin" />
+                    </div>
+                  </div>
+                  <div id="if_point"></div>
+                  <div className="center">
+                    <button id="create_button">作成</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <iframe id="target" name="target" />
+        </div>
+      </div>
+      <div>
+        <footer id="footer">
+          <div id="footer_inner">
+            <div id="footer_title">
+              <h1>Created by s20024</h1>
+            </div>
+            <div id="footer_contents">
+              <div id="footer_contents_first"></div>
+              <div id="footer_github">
+                <a href="https://github.com/s20024">
+                  <div id="footer_github_icon">
+                    <BsGithub size={30}/>
+                  </div>
+                  Github
+                </a>
+              </div>
+              <div id="footer_contents_middle"></div>
+              <div id="footer_email">
+                <a href="mailto:s20024@std.it-college.ac.jp">
+                  <div id="footer_email_icon">
+                    <HiMail size={30}/>
+                  </div>
+                  Email
+                </a>
+              </div>
+              <div id="footer_contents_last"></div>
+            </div>
+            <div id="footer_footer">
+              <div id="footer_cw">
+                <small>&copy;2022 s20024</small>
+              </div>
+              <div id="footer_katemangostar">
+                used <a href="https://jp.freepik.com/author/katemangostar">katemangostar</a>'s images.
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <script src="./js/header.js"></script>
   </body>
 </html>
