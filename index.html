@@ -4,85 +4,87 @@
     <meta charset="utf-8" />
     <link rel="icon" href="./images/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
     <link rel="apple-touch-icon" href="./images/logo192.png" />
-    <link rel="stylesheet" href="./style/style.css" type="text/css">
+    <link rel="stylesheet" href="./style/header.css" tyle="text/css">
+    <link rel="stylesheet" href="./style/footer.css" tyle="text/css">
+    <link rel="stylesheet" href="./style/contents.css" tyle="text/css">
+    <link rel="stylesheet" href="./style/index.css" tyle="text/css">
     <title>Tournament App</title>
   </head>
   <body>
     <div id="index_div" class="body_div">
       <div id="header_div">
-      <header id="header">
-        <div class="header_inner">
-          <div id="header_icon_div">
-            <img id="header_icon" src="./images/icon.jpg" alt="icon" />
-          </div>
-          <div id="header_title">
-            <h1>
-              <a class="text_purple" href="https://s20024.github.io/TournamentApp">TournamentApp</a>
-            </h1>
-          </div>
-  
-          <nav class="header_nav" id="nav">
-            <ul class="nav_items nav-items">
-              <li class="nav-items_item header_contents_item">
-                <a href="https://s20024.github.io/TournamentApp/all" class="text_red">All</a>
-              </li>
-              <li class="header_contents_item">
-                <a href="https://s20024.github.io/TournamentApp/make" class="text_green">Make</a>
-              </li>
-              <li class="header_contents_item">
-                <a href="https://s20024.github.io/TournamentApp/participation" class="text_yellow">Participation</a>
-              </li>
-              <li class="header_contents_item">
-                <a href="https://s20024.github.io/TournamentApp/tournament" class="text_blue">Tournament</a>
-              </li>
-            </ul>
-          </nav>
-          <button class="header_hamburger hamburger" id="btn_hamburger" onClick={this.handleClickHamburger}>
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
-      </header>
-      </div>
-      <div id="contents_div">
-        <div id="contents_inner">
-          <div id="contents_frame">
-            <div id="contents_contents">
-              <h1>こんにちは。</h1>
-              <p>
-                このサイトでは、大会の開催から、エントリー、
-                試合情報の確認等全てできるようなサイトです。
-              </p>
-              <ul>
-                <li>
-                  今までの大会の結果が見たい方は、上記のメニューの
-                  <font class="text_red text_bold">All</font>
-                  から。
+        <header id="header">
+          <div class="header_inner">
+            <div id="header_icon_div">
+              <img id="header_icon" src="./images/icon.jpg" alt="icon" />
+            </div>
+            <div id="header_title">
+              <h1>
+                <a class="text_purple" href="https://github.com/s20024/TournamentApp">TournamentApp</a>
+              </h1>
+            </div>
+    
+            <nav class="header_nav" id="nav">
+              <ul class="nav_items nav-items">
+                <li class="nav-items_item header_contents_item">
+                  <a href="https://github.com/s20024/TournamentApp/all" class="text_red">All</a>
                 </li>
-                <li>
-                  大会を制作したい方は、上記のメニューの
-                  <font class="text_green text_bold">Make</font>
-                  から。
+                <li class="header_contents_item">
+                  <a href="https://github.com/s20024/TournamentApp/make" class="text_green">Make</a>
                 </li>
-                <li>
-                  大会に参加したい方は、上記のメニューの
-                  <font class="text_yellow text_bold">Participation</font>
-                  から。
+                <li class="header_contents_item">
+                  <a href="https://github.com/s20024/TournamentApp/participation" class="text_yellow">Participation</a>
                 </li>
-                <li>
-                  大会の状況を見たい方は、上記のメニューの
-                  <font class="text_blue text_bold">Make</font>
-                  から。
+                <li class="header_contents_item">
+                  <a href="https://github.com/s20024/TournamentApp/tournament" class="text_blue">Tournament</a>
                 </li>
               </ul>
-              <p>
-                こちらのサイトは、一般学生が制作したものになります。
-                エラー等が発生した場合は申し訳ありません。<br />
-                また、バグ等を発見した際は、下記のEmailの方から通知をしていただくと助かります。
-              </p>
-            </div>
+            </nav>
+            <button class="header_hamburger hamburger" id="btn_hamburger" onClick={this.handleClickHamburger}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </header>
+      </div>
+      <div id="contents_div">
+        <div id="contents_frame">
+          <div id="contents_contents">
+        <h1>こんにちは。</h1>
+        <p>
+          このサイトでは、大会の開催から、エントリー、
+          試合情報の確認等全てできるようなサイトです。
+        </p>
+        <ul>
+          <li>
+            今までの大会の結果が見たい方は、上記のメニューの
+            <font class="text_red text_bold">All</font>
+            から。
+          </li>
+          <li>
+            大会を制作したい方は、上記のメニューの
+            <font class="text_green text_bold">Make</font>
+            から。
+          </li>
+          <li>
+            大会に参加したい方は、上記のメニューの
+            <font class="text_yellow text_bold">Participation</font>
+            から。
+          </li>
+          <li>
+            大会の状況を見たい方は、上記のメニューの
+            <font class="text_blue text_bold">Make</font>
+            から。
+          </li>
+        </ul>
+        <p>
+          こちらのサイトは、一般学生が制作したものになります。
+          エラー等が発生した場合は申し訳ありません。<br />
+          また、バグ等を発見した際は、下記のEmailの方から通知をしていただくと助かります。
+        </p>
           </div>
         </div>
       </div>

@@ -1,12 +1,15 @@
-
 <!DOCTYPE html>
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="../images/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
     <link rel="apple-touch-icon" href="../images/logo192.png" />
-    <link rel="stylesheet" href="../style/style.css" tyle="text/css">
+    <link rel="stylesheet" href="../style/header.css" tyle="text/css">
+    <link rel="stylesheet" href="../style/footer.css" tyle="text/css">
+    <link rel="stylesheet" href="../style/contents.css" tyle="text/css">
+    <link rel="stylesheet" href="../style/make.css" tyle="text/css">
     <title>Tournament App Make</title>
   </head>
   <body>
@@ -19,23 +22,23 @@
             </div>
             <div id="header_title">
               <h1>
-                <a class="text_purple" href="https://s20024.github.io/TournamentApp">TournamentApp</a>
+                <a class="text_purple" href="https://github.com/s20024/TournamentApp">TournamentApp</a>
               </h1>
             </div>
     
             <nav class="header_nav" id="nav">
               <ul class="nav_items nav-items">
                 <li class="nav-items_item header_contents_item">
-                  <a href="https://s20024.github.io/TournamentApp/all" class="text_red">All</a>
+                  <a href="https://github.com/s20024/TournamentApp/all" class="text_red">All</a>
                 </li>
                 <li class="header_contents_item">
-                  <a href="https://s20024.github.io/TournamentApp/make" class="text_green">Make</a>
+                  <a href="https://github.com/s20024/TournamentApp/make" class="text_green">Make</a>
                 </li>
                 <li class="header_contents_item">
-                  <a href="https://s20024.github.io/TournamentApp/participation" class="text_yellow">Participation</a>
+                  <a href="https://github.com/s20024/TournamentApp/participation" class="text_yellow">Participation</a>
                 </li>
                 <li class="header_contents_item">
-                  <a href="https://s20024.github.io/TournamentApp/tournament" class="text_blue">Tournament</a>
+                  <a href="https://github.com/s20024/TournamentApp/tournament" class="text_blue">Tournament</a>
                 </li>
               </ul>
             </nav>
@@ -48,111 +51,115 @@
         </header>
       </div>
       <div id="contents_div">
-        <div id="make">
-          <div className="contents_title">
-            <div className="contents_title_contents">
-              <h1>Make Tournament!!</h1>
+        <div id="contents_frame">
+          <div id="contents_contents">
+            <div id="make">
+              <div className="contents_title">
+                <div className="contents_title_contents">
+                  <h1>Make Tournament!!</h1>
+                </div>
+              </div>
+              <div className="contents_contents">
+                <form action="" id="form" method="post" target="target">
+                  <div id="make_organizer">
+                    <div id="make_organizer_title">
+                      <h1>主催者</h1>
+                    </div>
+                    <div id="make_organizer_contents">
+                      <div className="make_contents_cell">
+                        <div className="make_contents_label">
+                          <label>Name:</label>
+                        </div>
+                        <div className="make_contents_input">
+                          <input type="text" name="name" id="input_name" />
+                        </div>
+                      </div>
+                      <div className="make_contents_cell">
+                        <div className="make_contents_label">
+                          <label>Email:</label>
+                        </div>
+                        <div className="make_contents_input">
+                          <input type="email" name="email" id="input_email" /> </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="make_tournament">
+                    <div id="make_tournament_title">
+                      <h1>大会詳細</h1>
+                    </div>
+                    <div id="make_tournament_contents">
+                      <div className="make_contents_cell">
+                        <div className="make_contents_label">
+                          <label>Title:</label>
+                        </div>
+                        <div className="make_contents_input">
+                          <input type="text" name="title" id="input_title" />
+                        </div>
+                      </div>
+                      <div className="make_contents_cell">
+                        <div className="make_contents_label">
+                          <label>大会アイコン:</label>
+                        </div>
+                        <div className="make_contents_input">
+                          <input type="file" name="image" id="input_image" />
+                        </div>
+                      </div>
+                      <div className="make_contents_cell">
+                        <div className="make_contents_label">
+                          <label>開催日:</label>
+                        </div>
+                        <div className="make_contents_input">
+                          <input type="date" name="date" id="input_date" />
+                        </div>
+                      </div>
+                      <div className="make_contents_cell">
+                        <div className="make_contents_label">
+                          <label>締め切り:</label>
+                        </div>
+                        <div className="make_contents_input">
+                          <input type="date" name="entry_day" id="input_entry_day" />
+                        </div>
+                      </div>
+                      <div className="make_contents_cell">
+                        <div className="make_contents_label">
+                          <label>グループ数:</label>
+                        </div>
+                        <div className="make_contents_input">
+                          <input type="number" name="group_number" id="input_group_number" />
+                        </div>
+                      </div>
+                      <div className="make_contents_cell">
+                        <div className="make_contents_label">
+                          <label>グループ人数:</label>
+                        </div>
+                        <div className="make_contents_input">
+                          <input type="number" name="group_number_people" id="input_group_number_people" />
+                        </div>
+                      </div>
+                      <div className="make_contents_cell">
+                        <div className="make_contents_label">
+                          <label>大会の種類:</label>
+                        </div>
+                        <div className="make_contents_input">
+                          <label>トーナメント</label>
+                          <input type="radio" name="tournament_type" id="input_tournament_type" value="tournament" />
+                          <label>ポイント制</label>
+                          <input type="radio" name="tournament_type" id="input_tournament_type" value="point" />
+                          <label>総当たり戦</label>
+                          <input type="radio" name="tournament_type" id="input_tournament_type" value="round-robin" />
+                        </div>
+                      </div>
+                      <div id="if_point"></div>
+                      <div className="center">
+                        <button id="create_button">作成</button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <iframe id="target" name="target"></iframe>
             </div>
           </div>
-          <div className="contents_contents">
-            <form action="" id="form" method="post" target="target">
-              <div id="make_organizer">
-                <div id="make_organizer_title">
-                  <h1>主催者</h1>
-                </div>
-                <div id="make_organizer_contents">
-                  <div className="make_contents_cell">
-                    <div className="make_contents_label">
-                      <label>Name:</label>
-                    </div>
-                    <div className="make_contents_input">
-                      <input type="text" name="name" id="input_name" />
-                    </div>
-                  </div>
-                  <div className="make_contents_cell">
-                    <div className="make_contents_label">
-                      <label>Email:</label>
-                    </div>
-                    <div className="make_contents_input">
-                      <input type="email" name="email" id="input_email" /> </div>
-                  </div>
-                </div>
-              </div>
-              <div id="make_tournament">
-                <div id="make_tournament_title">
-                  <h1>大会詳細</h1>
-                </div>
-                <div id="make_tournament_contents">
-                  <div className="make_contents_cell">
-                    <div className="make_contents_label">
-                      <label>Title:</label>
-                    </div>
-                    <div className="make_contents_input">
-                      <input type="text" name="title" id="input_title" />
-                    </div>
-                  </div>
-                  <div className="make_contents_cell">
-                    <div className="make_contents_label">
-                      <label>大会アイコン:</label>
-                    </div>
-                    <div className="make_contents_input">
-                      <input type="file" name="image" id="input_image" />
-                    </div>
-                  </div>
-                  <div className="make_contents_cell">
-                    <div className="make_contents_label">
-                      <label>開催日:</label>
-                    </div>
-                    <div className="make_contents_input">
-                      <input type="date" name="date" id="input_date" />
-                    </div>
-                  </div>
-                  <div className="make_contents_cell">
-                    <div className="make_contents_label">
-                      <label>締め切り:</label>
-                    </div>
-                    <div className="make_contents_input">
-                      <input type="date" name="entry_day" id="input_entry_day" />
-                    </div>
-                  </div>
-                  <div className="make_contents_cell">
-                    <div className="make_contents_label">
-                      <label>グループ数:</label>
-                    </div>
-                    <div className="make_contents_input">
-                      <input type="number" name="group_number" id="input_group_number" />
-                    </div>
-                  </div>
-                  <div className="make_contents_cell">
-                    <div className="make_contents_label">
-                      <label>グループ人数:</label>
-                    </div>
-                    <div className="make_contents_input">
-                      <input type="number" name="group_number_people" id="input_group_number_people" />
-                    </div>
-                  </div>
-                  <div className="make_contents_cell">
-                    <div className="make_contents_label">
-                      <label>大会の種類:</label>
-                    </div>
-                    <div className="make_contents_input">
-                      <label>トーナメント</label>
-                      <input type="radio" name="tournament_type" id="input_tournament_type" value="tournament" />
-                      <label>ポイント制</label>
-                      <input type="radio" name="tournament_type" id="input_tournament_type" value="point" />
-                      <label>総当たり戦</label>
-                      <input type="radio" name="tournament_type" id="input_tournament_type" value="round-robin" />
-                    </div>
-                  </div>
-                  <div id="if_point"></div>
-                  <div className="center">
-                    <button id="create_button">作成</button>
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-          <iframe id="target" name="target" />
         </div>
       </div>
       <div>

@@ -1,0 +1,72 @@
+#footer {
+  margin-top: 2vh;
+  padding-bottom: 25px;
+  width: 100%;
+}
+
+#footer_inner {
+  padding: 0 20px;
+  color: white;
+}
+
+#footer_title {
+  font-size: 15px;
+  text-align: center;
+}
+
+#footer_title h1 {
+  margin: 0;
+}
+
+#footer_contents {
+  margin: 0;
+  display: flex;
+}
+
+#footer_contents_first {
+  flex: 3;
+}
+
+#footer_github {
+  flex: 1;
+  text-align: center;
+}
+
+#footer_github a {
+  color: #ffffff;
+}
+
+#footer_contents_middle {
+  flex: 2;
+}
+
+#footer_email {
+  flex: 1;
+  text-align: center;
+}
+
+#footer_email a {
+  color: #ffffff;
+}
+
+#footer_contents_last {
+  flex: 3;
+}
+
+#footer_footer {
+  display: flex;
+  margin-top: 3px;
+}
+
+#footer_cw {
+  flex: 1;
+}
+
+#footer_katemangostar {
+  flex: 3;
+  text-align: right;
+}
+
+#footer_katemangostar a {
+  color: lightgreen;
+}

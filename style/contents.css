@@ -15,7 +15,6 @@
 }
 
 #contents_contents {
-  height: 100%;
   width: 93%;
   overflow: auto;
 }
@@ -54,51 +53,3 @@
   border-style: dotted;
 }
 
-#target {
-  display: none;
-}
-
-#make_organizer_title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#make_tournament_title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#make_organizer_title h1 {
-  margin-bottom: 0;
-}
-
-#make_tournament_title h1 {
-  margin-bottom: 0;
-}
-
-#make_organizer_contents {
-  background-color: rgba(0, 255, 0, 0.3);
-}
-
-#make_tournament_contents {
-  background-color: rgba(0, 255, 0, 0.3);
-}
-
-.make_contents_cell {
-  display: flex;
-}
-
-.make_contents_label {
-  flex: 1;
-  text-align: right;
-}
-
-.make_contents_input {
-  flex: 3;
-}
-
-.center {
-  text-align: center;
-}
