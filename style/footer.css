@@ -70,3 +70,9 @@
 #footer_katemangostar a {
   color: lightgreen;
 }
+
+.footer_img {
+  height: 30px;
+  width: 30px;
+  margin: 5px 0 0 0;
+}

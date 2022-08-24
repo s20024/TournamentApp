@@ -8,7 +8,7 @@
   backdrop-filter: blur(5px);
   border-radius: 30px;
   margin: 20px;
-  height: 70vh;
+  height: 65vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,6 +16,7 @@
 
 #contents_contents {
   width: 93%;
+  max-height: 100%;
   overflow: auto;
 }
 
@@ -53,3 +54,16 @@
   border-style: dotted;
 }
 
+.fade_out {
+  display: none;
+}
+
+.fade_in {
+  opacity: 0;
+  animation: 5s fadeIn forwards;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}

@@ -53,38 +53,6 @@
       <div id="contents_div">
         <div id="contents_frame">
           <div id="contents_contents">
-            <h1>こんにちは。</h1>
-            <p>
-              このサイトでは、大会の開催から、エントリー、
-              試合情報の確認等全てできるようなサイトです。
-            </p>
-            <ul>
-              <li>
-                今までの大会の結果が見たい方は、上記のメニューの
-                <font class="text_red text_bold">All</font>
-                から。
-              </li>
-              <li>
-                大会を制作したい方は、上記のメニューの
-                <font class="text_green text_bold">Make</font>
-                から。
-              </li>
-              <li>
-                大会に参加したい方は、上記のメニューの
-                <font class="text_yellow text_bold">Participation</font>
-                から。
-              </li>
-              <li>
-                大会の状況を見たい方は、上記のメニューの
-                <font class="text_blue text_bold">Make</font>
-                から。
-              </li>
-            </ul>
-            <p>
-              こちらのサイトは、一般学生が制作したものになります。
-              エラー等が発生した場合は申し訳ありません。<br />
-              また、バグ等を発見した際は、下記のEmailの方から通知をしていただくと助かります。
-            </p>
           </div>
         </div>
       </div>
@@ -99,7 +67,7 @@
               <div id="footer_github">
                 <a href="https://github.com/s20024">
                   <div id="footer_github_icon">
-                    <BsGithub size={30}/>
+                    <img src="./images/github.png" id="footer_github_img" class="footer_img">
                   </div>
                   Github
                 </a>
@@ -108,7 +76,7 @@
               <div id="footer_email">
                 <a href="mailto:s20024@std.it-college.ac.jp">
                   <div id="footer_email_icon">
-                    <HiMail size={30}/>
+                    <img src="./images/mail.png" id="footer_mail_img" class="footer_img">
                   </div>
                   Email
                 </a>
@@ -127,7 +95,23 @@
         </footer>
       </div>
     </div>
+    <div class="fade_out" id="fade_out_div">
+      <h1 class="fade_in">こんにちは。</h1> 
+      <p class="fade_in"> 
+        このサイトは、大会を開催するサイトです。 
+      </p> 
+      <p class="fade_in"> 
+        こちらのサイトで開催された大会のデータは、 
+        s20024のGoogleDriveが管理しています。 
+      </p> 
+      <p class="fade_in"> 
+        こちらのサイトは、一般学生が制作したものになります。 
+        エラー等が発生した場合は申し訳ありません。<br /> 
+        また、バグ等を発見した際は、下記のEmailの方から通知をしていただくと助かります。 
+      </p> 
+    </div>
     <script src="./js/header.js"></script>
+    <script src="./js/index.js"></script>
     <script src="./js/fade.js"></script>
   </body>
 </html>
