@@ -56,107 +56,13 @@
         <div id="contents_frame">
           <div id="contents_contents">
             <div id="make">
-              <div className="contents_title">
-                <div className="contents_title_contents">
+              <div class="contents_title">
+                <div class="contents_title_contents">
                   <h1>Make Tournament!!</h1>
                 </div>
               </div>
-              <div className="contents_contents">
-                <form action="" id="form" method="post" target="target">
-                  <div id="make_organizer">
-                    <div id="make_organizer_title">
-                      <h1>主催者</h1>
-                    </div>
-                    <div id="make_organizer_contents">
-                      <div className="make_contents_cell">
-                        <div className="make_contents_label">
-                          <label>Name:</label>
-                        </div>
-                        <div className="make_contents_input">
-                          <input type="text" name="name" id="input_name" />
-                        </div>
-                      </div>
-                      <div className="make_contents_cell">
-                        <div className="make_contents_label">
-                          <label>Email:</label>
-                        </div>
-                        <div className="make_contents_input">
-                          <input type="email" name="email" id="input_email" /> </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div id="make_tournament">
-                    <div id="make_tournament_title">
-                      <h1>大会詳細</h1>
-                    </div>
-                    <div id="make_tournament_contents">
-                      <div className="make_contents_cell">
-                        <div className="make_contents_label">
-                          <label>Title:</label>
-                        </div>
-                        <div className="make_contents_input">
-                          <input type="text" name="title" id="input_title" />
-                        </div>
-                      </div>
-                      <div className="make_contents_cell">
-                        <div className="make_contents_label">
-                          <label>大会アイコン:</label>
-                        </div>
-                        <div className="make_contents_input">
-                          <input type="file" name="image" id="input_image" />
-                        </div>
-                      </div>
-                      <div className="make_contents_cell">
-                        <div className="make_contents_label">
-                          <label>開催日:</label>
-                        </div>
-                        <div className="make_contents_input">
-                          <input type="date" name="date" id="input_date" />
-                        </div>
-                      </div>
-                      <div className="make_contents_cell">
-                        <div className="make_contents_label">
-                          <label>締め切り:</label>
-                        </div>
-                        <div className="make_contents_input">
-                          <input type="date" name="entry_day" id="input_entry_day" />
-                        </div>
-                      </div>
-                      <div className="make_contents_cell">
-                        <div className="make_contents_label">
-                          <label>グループ数:</label>
-                        </div>
-                        <div className="make_contents_input">
-                          <input type="number" name="group_number" id="input_group_number" />
-                        </div>
-                      </div>
-                      <div className="make_contents_cell">
-                        <div className="make_contents_label">
-                          <label>グループ人数:</label>
-                        </div>
-                        <div className="make_contents_input">
-                          <input type="number" name="group_number_people" id="input_group_number_people" />
-                        </div>
-                      </div>
-                      <div className="make_contents_cell">
-                        <div className="make_contents_label">
-                          <label>大会の種類:</label>
-                        </div>
-                        <div className="make_contents_input">
-                          <label>トーナメント</label>
-                          <input type="radio" name="tournament_type" id="input_tournament_type" value="tournament" />
-                          <label>ポイント制</label>
-                          <input type="radio" name="tournament_type" id="input_tournament_type" value="point" />
-                          <label>総当たり戦</label>
-                          <input type="radio" name="tournament_type" id="input_tournament_type" value="round-robin" />
-                        </div>
-                      </div>
-                      <div id="if_point"></div>
-                      <div className="center">
-                        <button id="create_button">作成</button>
-                      </div>
-                    </div>
-                  </div>
+              <div class="contents_contents">
+                <form action="https://script.google.com/macros/s/AKfycbz4lCGZxXQ7QReV25tZrLV1CvF-miJm2us837263acBVpeE-Y0rHDcxEwaO39jyG-Lc/exec?course=make" id="form" method="post" target="target">
                 </form>
               </div>
               <iframe id="target" name="target"></iframe>
@@ -203,6 +109,110 @@
         </footer>
       </div>
     </div>
+    <div id="fade_out" class="fade_out">
+                  <div id="make_organizer" class="fade_in">
+                    <div id="make_organizer_title">
+                      <h1>主催者</h1>
+                    </div>
+                    <div id="make_organizer_contents">
+                      <div class="make_contents_cell">
+                        <div class="make_contents_label">
+                          <label>Name:</label>
+                        </div>
+                        <div class="make_contents_input">
+                          <input type="text" name="name" id="input_name" />
+                        </div>
+                      </div>
+                      <div class="make_contents_cell">
+                        <div class="make_contents_label">
+                          <label>Email:</label>
+                        </div>
+                        <div class="make_contents_input">
+                          <input type="email" name="email" id="input_email" /> </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="make_tournament" class="fade_in">
+                    <div id="make_tournament_title">
+                      <h1>大会詳細</h1>
+                    </div>
+                    <div id="make_tournament_contents">
+                      <div class="make_contents_cell">
+                        <div class="make_contents_label">
+                          <label>タイトル:</label>
+                        </div>
+                        <div class="make_contents_input">
+                          <input type="text" name="title" id="input_title" />
+                        </div>
+                      </div>
+                      <div class="make_contents_cell">
+                        <div class="make_contents_label">
+                          <label>アイコン:</label>
+                        </div>
+                        <img id="preview" height="100px" height="100px">
+                        <div class="make_contents_input">
+                          <label style="margin-left: 5px;border: 1px solid black;">
+                            写真を選択
+                            <input type="file" name="image" id="input_image" style="display: none" />
+                          </label>
+                          <div id="data"></div>
+                        </div>
+                      </div>
+                      <div class="make_contents_cell">
+                        <div class="make_contents_label">
+                          <label>開催日:</label>
+                        </div>
+                        <div class="make_contents_input">
+                          <input type="date" name="date" id="input_date" />
+                        </div>
+                      </div>
+                      <div class="make_contents_cell">
+                        <div class="make_contents_label">
+                          <label>締め切り:</label>
+                        </div>
+                        <div class="make_contents_input">
+                          <input type="date" name="entry_day" id="input_entry_day" />
+                        </div>
+                      </div>
+                      <div class="make_contents_cell">
+                        <div class="make_contents_label">
+                          <label>グループ数:</label>
+                        </div>
+                        <div class="make_contents_input">
+                          <input type="number" name="group_number" id="input_group_number" />
+                        </div>
+                      </div>
+                      <div class="make_contents_cell">
+                        <div class="make_contents_label">
+                          <label>グループ人数:</label>
+                        </div>
+                        <div class="make_contents_input">
+                          <input type="number" name="group_number_people" id="input_group_number_people" />
+                        </div>
+                      </div>
+                      <div class="make_contents_cell">
+                        <div class="make_contents_label">
+                          <label>大会の種類:</label>
+                        </div>
+                        <div class="make_contents_input">
+                          <label>トーナメント</label>
+                          <input type="radio" name="tournament_type" id="input_tournament_type" value="tournament" /><br>
+                          <label>ポイント制</label>
+                          <input type="radio" name="tournament_type" id="input_tournament_type" value="point" /><br>
+                          <label>総当たり戦</label>
+                          <input type="radio" name="tournament_type" id="input_tournament_type" value="round-robin" /><br>
+                        </div>
+                      </div>
+                      <div id="if_point" class="make_contents_cell"></div>
+                    </div>
+                  </div>
+                  <div id="make_battle_contents"></div>
+                  <div class="center" class="fade_in">
+                    <button id="create_button">作成</button>
+                  </div>
+    </div>
     <script src="../js/header.js"></script>
+    <script src="../js/make.js"></script>
+    <script src="../js/fade.js"></script>
   </body>
 </html>

@@ -1,0 +1,74 @@
+.tournament_div {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  color: white;
+  margin: 10px 10px 10px 0;
+}
+
+.tournament_icon_div {
+  height: 100px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tournament_icon {
+  max-height: 80px;
+  max-width: 80px;
+  height: auto;
+  width: auto;
+}
+
+.tournament_contents_div {
+  display: flex;
+  flex-flow: column;
+  flex: 1;
+}
+
+.tournament_contents_title {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  margin-right: 20px;
+  margin-bottom: 0px;
+}
+
+.tournament_contents_date {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  margin-top: 0px;
+}
+
+@media screen and (min-width: 960px) {
+  .tournament_div {
+    width: 40%;
+    float: left;
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    color: white;
+    margin: 30px 5%;
+  }
+
+  .tournament_icon_div {
+    height: 150px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .tournament_icon {
+    max-height: 110px;
+    max-width: 110px;
+    height: auto;
+    width: auto;
+  }
+}

@@ -10,7 +10,7 @@
 }
 
 #footer_title {
-  font-size: 15px;
+  font-size: 11px;
   text-align: center;
 }
 
@@ -21,6 +21,7 @@
 #footer_contents {
   margin: 0;
   display: flex;
+  font-size: 10px;
 }
 
 #footer_contents_first {
@@ -56,6 +57,19 @@
 #footer_footer {
   display: flex;
   margin-top: 3px;
+  font-size: 12px;
+}
+@media screen and (min-width: 960px) {
+  #footer_title {
+    font-size: 12px;
+  }
+
+  #footer_footer {
+    font-size: 14px;
+  }
+  #footer_contents {
+    font-size: 14px;
+  }
 }
 
 #footer_cw {
