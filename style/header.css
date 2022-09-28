@@ -270,3 +270,10 @@ ul, li {
 }
 
 /* Header ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* 共通 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.center_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

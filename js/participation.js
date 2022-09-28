@@ -6,7 +6,7 @@ let load_contents = false
 
 console.log("load participation.js")
 
-fetch("https://script.google.com/macros/s/AKfycbz1Dh619nqGEVhb6Wt0H2Ig4IvJVRxYRNp0Ml81IVuePFvj0M6mO1OUj0-xtAmPMmYH/exec?course=participation")
+fetch("https://script.google.com/macros/s/AKfycbzPgLNs5i3Yz6Svtsi2v7ZLgkmAa4ZugYKXHEdVc8o3KFJ6ZlKkevhArWfIm8qg52lK/exec?course=participation")
   .then(res => res.json())
   .then(res => {
     const fade_out_div = document.getElementById("fade_out_div")
@@ -16,6 +16,7 @@ fetch("https://script.google.com/macros/s/AKfycbz1Dh619nqGEVhb6Wt0H2Ig4IvJVRxYRN
       const date = new Date(tournament_data[3]).toISOString().split("T")[0].replaceAll("-", "/")
       const img = `https://drive.google.com/uc?export=view&id=${tournament_data[2]}`
       return ` \
+        <a href="./tournament/?id=${id}">
         <div class="tournament_div fade_in">
             <div class="tournament_icon_div">
               <img class="tournament_icon" src="${img}">
@@ -29,6 +30,7 @@ fetch("https://script.google.com/macros/s/AKfycbz1Dh619nqGEVhb6Wt0H2Ig4IvJVRxYRN
               </div>
             </div>
         </div>
+        </a>
       `
     }).join("")
     console.log(result)

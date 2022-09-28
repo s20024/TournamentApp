@@ -1,0 +1,134 @@
+.br {
+  background-color: rgba(255, 0, 0, 0.2);
+}
+
+.bg {
+  background-color: rgba(0, 255, 0, 0.2);
+}
+
+.bb {
+  background-color: rgba(0, 0, 255, 0.2);
+}
+
+
+#header_div {
+  height: 15vh;
+}
+
+#contents_frame {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
+  border-radius: 30px;
+  margin: 20px;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+#contents_contents {
+  background-color: rgba(255, 0, 0, 0.2);
+  display: flex;
+  flex-flow: column;
+  width: 93%;
+  height: 100%;
+  overflow: auto;
+}
+
+.contents_title_contents {
+  padding: 0px 20px;
+}
+
+.contents_title_title_contents h1 {
+  margin: auto;
+}
+
+.contents_title_contents_contents {
+  display: flex;
+  justify-content: space-between;
+}
+
+#tournament_image {
+  max-height: 80px;
+  max-width: 80px;
+  height: auto;
+  width: auto;
+}
+
+#contents_body {
+  display: flex;
+  flex: 10;
+}
+
+#contents_left {
+  flex: 6;
+}
+
+#contents_right {
+  flex: 4;
+  display: flex;
+  flex-flow: column;
+}
+
+#contents_right_top {
+  flex: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#contents_right_bottom {
+  flex: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#youtube_cover {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 90%;
+  width: 90%;
+  display: flex;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px, 20px;
+}
+
+#youtube_frame {
+  max-height: 250px;
+  max-width: 380px;
+  height: auto;
+  width: auto;
+}
+
+#youtube_text {
+  color: white;
+  text-align: center;
+}
+
+#log_cover {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 90%;
+  width: 90%;
+  display: flex;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px, 20px;
+}
+
+#log_text {
+  color: white;
+  text-align: center;
+}
+
+#log {
+  background-color: white;
+  height: 300px;
+  width: 400px;
+}
+
+#tornament {
+  width: 800px;
+}

@@ -1,0 +1,76 @@
+.contents_title {
+}
+
+.contents_title_contents {
+  padding: 0px 20px;
+}
+
+.contents_title_title_contents h1 {
+  margin: auto;
+}
+
+.contents_title_contents_contents {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contents_contents {
+  margin-top: 40px;
+}
+
+.form_contents_cell {
+  margin: 10px;
+  display: flex;
+}
+
+.form_contents_label {
+  flex: 4;
+  text-align: right;
+  font-size: 20px;
+}
+
+.form_contents_input {
+  flex: 6;
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+.input_text {
+  font-size: 20px;
+  width: 60%;
+}
+
+.blank_line {
+  height: 20px;
+}
+
+#preview {
+  max-height: 100px;
+  max-width: 100px;
+  height: auto;
+  width: auto;
+  border-radius: 15px;
+}
+
+#form_contents_label_image {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+#form_contents_input_image {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+#input_file {
+  padding-left: 10px;
+}
+
+#tournament_image {
+  max-height: 80px;
+  max-width: 80px;
+  height: auto;
+  width: auto;
+}

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="../../images/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="apple-touch-icon" href="../../images/logo192.png" />
+    <link rel="stylesheet" href="../../style/header.css" tyle="text/css">
+    <link rel="stylesheet" href="../../style/footer.css" tyle="text/css">
+    <link rel="stylesheet" href="../../style/contents.css" tyle="text/css">
+    <link rel="stylesheet" href="../../style/participation.css" tyle="text/css">
+    <link rel="stylesheet" href="../../style/participationTournament.css" tyle="text/css">
+    <title>Tournament App Participation Tournament</title>
+  </head>
+  <body>
+    <div id="participation_div" class="body_div">
+      <div id="header_div">
+        <header id="header">
+          <div class="header_inner">
+            <div id="header_icon_div">
+              <img id="header_icon" src="../../images/icon.jpg" alt="icon" />
+            </div>
+            <div id="header_title">
+              <h1>
+                <a class="text_purple" href="https://s20024.github.io/TournamentApp">TournamentApp</a>
+                <font class="text_white">  &gt;  </font>
+                <font class="text_yellow">Participation</font>
+              </h1>
+            </div>
+    
+            <nav class="header_nav" id="nav">
+              <ul class="nav_items nav-items">
+                <li class="nav-items_item header_contents_item">
+                  <a href="../../all" class="text_red">All</a>
+                </li>
+                <li class="header_contents_item">
+                  <a href="../../make" class="text_green">Make</a>
+                </li>
+                <li class="header_contents_item">
+                  <a href="../../participation" class="text_yellow">Participation</a>
+                </li>
+                <li class="header_contents_item">
+                  <a href="../../tournament" class="text_blue">Tournament</a>
+                </li>
+              </ul>
+            </nav>
+            <button class="header_hamburger hamburger" id="btn_hamburger" onClick={this.handleClickHamburger}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </header>
+      </div>
+      <div id="contents_div">
+        <div id="contents_frame">
+          <div id="contents_contents">
+            <div class="contents_title">
+              <img src="../../images/no_image.jpeg" id="tournament_image">
+              <div class="contents_title_contents">
+                <h1 id="tournament_title"></h1>
+                <div class="contents_title_contents_contents">
+                  <div></div>
+                  <div class="contents_title_organizer" id="contents_title_organizer">
+                  </div>
+                  <div></div>
+                  <div class="contents_title_time" id="contents_title_time">
+                  </div>
+                  <div></div>
+                </div>
+              </div>
+            </div>
+            <div class="contents_contents">
+              <form action="" id="form" method="post" target="target">
+                <div class="form_contents" id="form_contents">
+                </div>
+              </form>
+            </div>
+            <!-- <ContentsFrame title={title} /> -->
+          </div>
+        </div>
+      </div>
+      <div>
+        <footer id="footer">
+          <div id="footer_inner">
+            <div id="footer_title">
+              <h1>Created by s20024</h1>
+            </div>
+            <div id="footer_contents">
+              <div id="footer_contents_first"></div>
+              <div id="footer_github">
+                <a href="https://github.com/s20024">
+                  <div id="footer_github_icon">
+                    <img src="../../images/github.png" id="footer_github_img" class="footer_img">
+                  </div>
+                  Github
+                </a>
+              </div>
+              <div id="footer_contents_middle"></div>
+              <div id="footer_email">
+                <a href="mailto:s20024@std.it-college.ac.jp">
+                  <div id="footer_email_icon">
+                    <img src="../../images/mail.png" id="footer_mail_img" class="footer_img">
+                  </div>
+                  Email
+                </a>
+              </div>
+              <div id="footer_contents_last"></div>
+            </div>
+            <div id="footer_footer">
+              <div id="footer_cw">
+                <small>&copy;2022 s20024</small>
+              </div>
+              <div id="footer_katemangostar">
+                used <a href="https://jp.freepik.com/author/katemangostar">katemangostar</a>'s images.
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <iframe id="target" name="target" style="display: none;"></iframe>
+    <div id="fade_out_div" class="fade_out">
+                  <div class="form_contents_cell fade_in">
+                    <div class="form_contents_label" id="form_contents_label_image">
+                      <div>
+                        グループイメージ: 
+                      </div>
+                    </div>
+                    <div class="form_contents_input fade_in" id="form_contents_input_image">
+                      <img src="../../images/no_image.jpeg" id="preview">
+                      <div>
+                        <input type="file" id="input_image">
+                        <div id="data" style="display: none;">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form_contents_cell fade_in">
+                    <div class="form_contents_label">
+                      グループ名 : 
+                    </div>
+                    <div class="form_contents_input">
+                      <input type="text" id="input_group_name" class="input_text" name="group_name">
+                    </div>
+                  </div>
+                  <div class="blank_line"></div>
+                  <div class="form_contents_cell fade_in">
+                    <div class="form_contents_label">
+                      リーダー名 : 
+                    </div>
+                    <div class="form_contents_input">
+                      <input type="text" id="input_leader_name" class="input_text" name="leader_name">
+                    </div>
+                  </div>
+                  <div class="form_contents_cell fade_in">
+                    <div class="form_contents_label">
+                      リーダーメール : 
+                    </div>
+                    <div class="form_contents_input">
+                      <input type="email" id="input_leader_mail" class="input_text" name="leader_mail">
+                    </div>
+                  </div>
+                  <div class="blank_line"></div>
+                  <div id="menber_div"></div>
+                  <div class="blank_line"></div>
+                  <div class="form_contents_cell fade_in">
+                    <div class="form_contents_label">
+                      パスワード : 
+                    </div>
+                    <div class="form_contents_input">
+                      <input type="password" id="input_password" class="input_text" name="password">
+                    </div>
+                  </div>
+                  <div class="center_div fade_in">
+                    <div>
+                      <input type="submit">
+                    </div>
+                  </div>
+    </div>
+    <script src="../../js/header.js"></script>
+    <script src="../../js/participationTournament.js"></script>
+    <script src="../../js/fade.js"></script>
+  </body>
+</html>

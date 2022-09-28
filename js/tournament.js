@@ -16,6 +16,7 @@ fetch("https://script.google.com/macros/s/AKfycbxID6iwEEGIKZwV4obqw9cIIFeppCj8EA
       const date = new Date(tournament_data[3]).toISOString().split("T")[0].replaceAll("-", "/")
       const img = `https://drive.google.com/uc?export=view&id=${tournament_data[2]}`
       return ` \
+        <a href="./tournament/?id=${id}">
         <div class="tournament_div fade_in">
             <div class="tournament_icon_div">
               <img class="tournament_icon" src="${img}">
@@ -29,6 +30,7 @@ fetch("https://script.google.com/macros/s/AKfycbxID6iwEEGIKZwV4obqw9cIIFeppCj8EA
               </div>
             </div>
         </div>
+        </a>
       `
     }).join("")
     console.log(result)
