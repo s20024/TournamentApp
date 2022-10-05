@@ -1,5 +1,8 @@
 console.log("make.js")
 
+const form = document.getElementById("form")
+form.action = `${this.gasurl}?course=make`
+
 const from_id = "fade_out"
 const to_id = "form"
 

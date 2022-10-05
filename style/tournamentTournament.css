@@ -16,7 +16,6 @@
 }
 
 #contents_frame {
-  background-color: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(5px);
   border-radius: 30px;
   margin: 20px;
@@ -27,7 +26,6 @@
 }
 
 #contents_contents {
-  background-color: rgba(255, 0, 0, 0.2);
   display: flex;
   flex-flow: column;
   width: 93%;
@@ -62,6 +60,9 @@
 
 #contents_left {
   flex: 6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #contents_right {
@@ -92,19 +93,25 @@
   border-radius: 10px;
   justify-content: center;
   align-items: center;
-  padding: 10px, 20px;
+  flex-flow: column;
 }
 
-#youtube_frame {
-  max-height: 250px;
-  max-width: 380px;
-  height: auto;
-  width: auto;
-}
-
-#youtube_text {
+#youtube_cover_title {
   color: white;
+  flex: 1;
   text-align: center;
+  font-size: 20px;
+}
+
+#youtube_div {
+  background-image: url("../images/noyoutube.jpeg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 100%;
+  width: 90%;
+  flex: 9;
+  margin-bottom: 10px;
 }
 
 #log_cover {
@@ -115,20 +122,82 @@
   border-radius: 10px;
   justify-content: center;
   align-items: center;
+  flex-flow: column;
+}
+
+#tournament_cover {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 95%;
+  width: 95%;
+  display: flex;
+  border-radius: 10px;
+  justify-content: center;
   padding: 10px, 20px;
+  flex-flow: column;
 }
 
-#log_text {
+#log_cover_title {
   color: white;
+  font-size: 20px;
   text-align: center;
+  flex: 1;
 }
 
-#log {
+#log_div {
   background-color: white;
-  height: 300px;
-  width: 400px;
+  height: 95%;
+  width: 95%;
+  flex: 9;
+  margin-bottom: 10px;
+  overflow-y: scroll;
 }
 
 #tornament {
   width: 800px;
+}
+
+#tournament_cover_title {
+  flex: 1;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+}
+
+#tournament_contents {
+  flex: 19;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#test_canvas {
+  width: 95%;
+  height: 95%;
+  background-color: blue;
+}
+
+.log_cell {
+  border: 1px solid black;
+}
+
+.log_cell_title {
+  display: flex;
+}
+
+.log_name {
+  flex: 5;
+  text-align: center;
+}
+
+.log_time {
+  flex: 5;
+  text-align: center;
+}
+
+.log_text p {
+  padding: 0;
+  margin: 5px 10px;
+}
+
+#tournament {
 }

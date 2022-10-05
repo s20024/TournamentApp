@@ -1,12 +1,12 @@
-import Tournament from ./tournament.js
+import Tournament from "./tournament.js"
 
 const tournament = new Tournament(document)
 
 const config = {
   type: Phaser.AUTO,
     parent: 'tournament',
-    width: 800,
-    height: 600,
+    width: 700,
+    height: 500,
     pixelArt: true,
     physics: {
         default: 'arcade',

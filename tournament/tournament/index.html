@@ -59,51 +59,54 @@
             <div class="contents_title">
               <img src="../../images/no_image.jpeg" id="tournament_image">
               <div class="contents_title_contents">
-                <h1 id="tournament_title">第一回ときちゃん大会</h1>
+                <h1 id="tournament_title"></h1>
                 <div class="contents_title_contents_contents">
                   <div></div>
                   <div class="contents_title_organizer" id="contents_title_organizer">
-                    主催者: やら
                   </div>
                   <div></div>
                   <div class="contents_title_time" id="contents_title_time">
-                    日付: 2022/09/30
                   </div>
                   <div></div>
                 </div>
               </div>
             </div>
-            <div id="contents_body" class="br">
-              <div id="contents_left" class="bg">
-                ここにとーなめんと
-                <div id="tournament" class="bb"></div>
+            <div id="contents_body">
+              <div id="contents_left">
+                <div id="tournament_cover">
+                  <div id="tournament_cover_title">
+                    トーナメント
+                  </div>
+                  <div id="tournament_contents">
+                    <!-- <canvas id="test_canvas"></canvas> -->
+                    <div id="tournament"></div> 
+                  </div>
+                </div>
               </div>
-              <div id="contents_right" class="bg">
-                <div id="contents_right_top" class="bb">
+              <div id="contents_right">
+                <div id="contents_right_top">
                   <div id="youtube_cover">
+                    <div id="youtube_cover_title">
+                      Youtube
+                    </div>
                     <div id="youtube_div">
-                      <div id="youtube_text">
-                        Youtube
-                      </div>
-                      <div>
-                        <img src="../../images/no_image.jpeg" id="youtube_frame">
-                      </div>
+                      <iframe id="iframe" width="100%" height="100%" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                   </div>
                 </div>
-                <div id="contents_right_bottom" class="bb">
-                  <div id="log_cover" class="br">
-                    <div id="log_div" class="br">
-                      <div id="log_text" class="bg">
-                        Log
-                      </div>
-                      <div id="log" class="bb">
-                        aiueo
-                      </div>
+                <div id="contents_right_bottom">
+                  <div id="log_cover">
+                    <div id="log_cover_title">
+                      Log
+                    </div>
+                    <div id="log_div">
                     </div>
                   </div>
                 </div>
               </div>
+            </div>
+            <div style="background-color: red;">
+              hello
             </div>
             <!-- <ContentsFrame title={title} /> -->
           </div>
@@ -151,7 +154,9 @@
     <iframe id="target" name="target" style="display: none;"></iframe>
     <div id="fade_out_div" class="fade_out">
     </div>
+    <script src="../../js/url.js"></script>
     <script src="../../js/header.js"></script>
+    <script src="../../js/tournamentTournament.js"></script>
     <script type="module" src="./src/app.js"></script>
   </body>
 </html>

@@ -6,7 +6,7 @@ let load_contents = false
 
 console.log("load participation.js")
 
-fetch("https://script.google.com/macros/s/AKfycbzPgLNs5i3Yz6Svtsi2v7ZLgkmAa4ZugYKXHEdVc8o3KFJ6ZlKkevhArWfIm8qg52lK/exec?course=participation")
+fetch(`${this.gasurl}?course=participation`)
   .then(res => res.json())
   .then(res => {
     const fade_out_div = document.getElementById("fade_out_div")

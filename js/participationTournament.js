@@ -21,10 +21,9 @@ input_image.addEventListener("change", () => {
 })
 
 const urlParams = new URLSearchParams(window.location.search)
-const form_action_url = `https://script.google.com/macros/s/AKfycbyA-vV0Z2yaBWXniQZlWwHn9sHiGKOw3KcN-2wBcGcRcIUqnJpDc5fKgQjyU0yHbyRm/exec?course=participationTournament&id=${urlParams.get("id")}`
-document.getElementById("form").action = form_action_url
+document.getElementById("form").action = `${this.gasurl}?course=participationTournament&id=${urlParams.get("id")}`
 if (urlParams.has("id")) {
-  fetch(`https://script.google.com/macros/s/AKfycbzw2k49SqlLEbb_bBABaXFW8-VxPaJ87ags99152RKYdF5bQuJdpEkc0exY7_0xYHvk/exec?course=participationTournament&id=${urlParams.get("id")}`)
+  fetch(`${this.gasurl}?course=participationTournament&id=${urlParams.get("id")}`)
     .then(res => res.json())
     .then(res => {
       console.log(res)

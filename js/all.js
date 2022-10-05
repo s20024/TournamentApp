@@ -6,7 +6,7 @@ let load_contents = false
 
 console.log("load all.js")
 
-fetch("https://script.google.com/macros/s/AKfycbyo7uKzi37rdqPF2WWlWqK0Ir4mpS2hunku0YMWlod6SqVtMiWFLHL5QbQSMEG51MFK/exec?course=all")
+fetch(`${this.gasurl}?course=all`)
   .then(res => res.json())
   .then(res => {
     const fade_out_div = document.getElementById("fade_out_div")

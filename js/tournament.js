@@ -6,7 +6,7 @@ let load_contents = false
 
 console.log("load tournament.js")
 
-fetch("https://script.google.com/macros/s/AKfycbxID6iwEEGIKZwV4obqw9cIIFeppCj8EAAMNvB29Cr5EoepKKV7XtX6-5g7-eSqK06e/exec?course=tournament")
+fetch(`${this.gasurl}?course=tournament`)
   .then(res => res.json())
   .then(res => {
     const fade_out_div = document.getElementById("fade_out_div")
@@ -33,7 +33,6 @@ fetch("https://script.google.com/macros/s/AKfycbxID6iwEEGIKZwV4obqw9cIIFeppCj8EA
         </a>
       `
     }).join("")
-    console.log(result)
     fade_out_div.innerHTML = result
   })
 
