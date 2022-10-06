@@ -1,7 +1,9 @@
-console.log("load tournamentTournament.js")
+console.log("load tournamentTournamentCanvas.js")
 
 const from_id = ""
 const to_id = ""
+document.group_count = 0
+document.group_counter = 0
 
 const urlParams = new URLSearchParams(window.location.search)
 if (urlParams.has("id")) {
@@ -19,6 +21,8 @@ if (urlParams.has("id")) {
         document.getElementById("iframe").src = `https://www.youtube.com/embed/${res.data.youtube}`
         document.getElementById("group_flag").outerHTML = createGroupHtml(res.data.group)
         document.data = res.data
+        document.group_count = res.data.group.length
+        document.group = res.data.group
         // document.loading.start()
       } else {
         alert(res.message)
@@ -56,7 +60,12 @@ function createGroupHtml(groups) {
       <div class="group_cell">
         <div class="group_title">
           <div class="group_image">
-            <img src="https://drive.google.com/uc?export=view&id=${group.image}" class="group_image" id="image_${group.id}">
+            <img
+              src="https://drive.google.com/uc?export=view&id=${group.image}"
+              class="group_image"
+              id="image_${group.id}"
+              onload="loadImageCounter()"
+            >
           </div>
           <div class="group_name">
             ${group.name}
@@ -78,4 +87,12 @@ function createMenberHtml(menbers) {
       </div>
     `
   }).join("")
+}
+
+function loadImageCounter() {
+  document.group_counter++
+  console.log(`${document.group_count} : ${document.group_counter}`)
+  if (document.group_count === document.group_counter) {
+    document.can.start()
+  }
 }

@@ -1,16 +1,3 @@
-.br {
-  background-color: rgba(255, 0, 0, 0.2);
-}
-
-.bg {
-  background-color: rgba(0, 255, 0, 0.2);
-}
-
-.bb {
-  background-color: rgba(0, 0, 255, 0.2);
-}
-
-
 #header_div {
   height: 15vh;
 }
@@ -19,14 +6,13 @@
   backdrop-filter: blur(5px);
   border-radius: 30px;
   margin: 20px;
-  height: 80vh;
+  height: 150vh;
   display: flex;
   justify-content: center;
   align-items: start;
 }
 
 #contents_contents {
-  display: flex;
   flex-flow: column;
   width: 93%;
   height: 100%;
@@ -55,7 +41,7 @@
 
 #contents_body {
   display: flex;
-  flex: 10;
+  height: 70vh;
 }
 
 #contents_left {
@@ -201,3 +187,78 @@
 
 #tournament {
 }
+
+#group_div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#group_cover {
+  width: 95%;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
+#group_cover_title h1 {
+  color: white;
+  margin: 10px;
+}
+
+#group_cover_contents {
+  width: 95%;
+  margin: 10px;
+}
+
+.group_cell {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  float: left;
+  width: 46%;
+  margin: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
+.group_title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.group_image {
+  max-height: 100px;
+  max-width: 100px;
+  height: auto;
+  width: auto;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.group_name {
+  margin: 0 10px;
+  font-size: 20px;
+}
+
+.group_contents {
+  width: 100%;
+}
+
+.menber {
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: 1px solid 1px;
+  float: left;
+  width: 46%;
+  margin: 3px 2%;
+  text-align: center;
+}
+

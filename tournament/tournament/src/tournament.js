@@ -6,43 +6,36 @@ class Tournament extends Phaser.Scene {
 
   init(data) {
     console.log("init")
-    this.group_list = [
-      {name: "yara", image: "1mLGb7-yARtBok9O9-cUOofvGBb-Dysvo"},
-      {name: "unnko", image: "1dIj1LeSYUAX_G-UIbjO7RiToduZQIVoH"},
-      {name: "kome", image: "1CVLfUgeAXJSraFcQ4tJQN0xXgpxrf9Yx"},
-      {name: "hello", image: "19TUXDvQso_WQLrbdaIGWXQreALcPqtl1"},
-      {name: "world", image: "1ApoW3p-hr5fXLmF_-oCa9huwvfzOXPHE"}
-    ]
   }
 
   preload() {
     console.log("preload")
     this.camera = this.cameras.main
     this.camera.setBackgroundColor("ffffff")
-    this.load.image('test', document.getElementById("header_icon").src)
-    // this.iconLoad(this.group_list)
+    this.data = document.data
+    this.loadGroupImages(this.data.group)
+
   }
 
   create() {
     console.log("create")
     this.add.image(100, 100, "test").setDisplaySize(200, 200)
-    // this.testCreate(this.group_list)
+    this.createGroupImages(this.data.group)
   }
 
-  iconLoad(group_list) {
-    console.log("iconLoad")
-    group_list.forEach(group => {
-      this.load.image(`${group.name}_icon`, `https://drive.google.com/uc?export=view&id=${group.image}`)
+  loadGroupImages(groups) {
+    groups.forEach(group => {
+      this.textures.addImage(`icon_${group.id}`, document.getElementById(`image_${group.id}`))
     })
   }
 
-  testCreate(group_list) {
-    console.log("testCreate")
-    group_list.forEach((group, index) => {
+  createGroupImages(groups) {
+    groups.forEach((group, index) => {
       const y = parseInt(index / 7)
       const x = index - (y * 7)
-      const icon = this.add.image((x + 1) * 100, (y + 2) * 100, `${group.name}_icon`)
+      const icon = this.add.image((x + 1) * 100, (y + 2) * 100, `icon_${group.id}`)
       icon.on('pointerdown', (pointer) => {
+        console.log(group.name)
       }, this)
     })
   }
