@@ -1,1 +1,1 @@
-this.gasurl = "https://script.google.com/macros/s/AKfycbydQiLkAPm4uWCc4yas1x9cIzd-O2ZgqrRL8PwG2NSJGyDOfMeMIeOU6DjRxAcehuSA/exec"
+this.gasurl = "https://script.google.com/macros/s/AKfycbxOoQVoCb6NmwsbNHtgDGDndDqfAuBQfn8chCH8fOlo5IZud1wWim6zotiprBdS3ST-/exec"

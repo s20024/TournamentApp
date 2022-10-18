@@ -6,7 +6,6 @@
   backdrop-filter: blur(5px);
   border-radius: 30px;
   margin: 20px;
-  height: 150vh;
   display: flex;
   justify-content: center;
   align-items: start;
@@ -33,15 +32,18 @@
 }
 
 #tournament_image {
+  min-height: 80px;
+  min-width: 80px;
   max-height: 80px;
   max-width: 80px;
   height: auto;
   width: auto;
+  max-width: inherit;
 }
 
 #contents_body {
   display: flex;
-  height: 70vh;
+  flex-flow: column;
 }
 
 #contents_left {
@@ -49,6 +51,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 10px;
 }
 
 #contents_right {
@@ -62,6 +65,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 10px;
 }
 
 #contents_right_bottom {
@@ -69,12 +73,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 10px;
 }
 
 #youtube_cover {
   background-color: rgba(0, 0, 0, 0.6);
-  height: 90%;
-  width: 90%;
+  height: 95%;
+  width: 95%;
   display: flex;
   border-radius: 10px;
   justify-content: center;
@@ -95,9 +100,9 @@
   background-position: center center;
   background-size: cover;
   height: 100%;
-  width: 90%;
+  width: auto;
   flex: 9;
-  margin-bottom: 10px;
+  margin: 10px;
 }
 
 #log_cover {
@@ -113,7 +118,9 @@
 
 #tournament_cover {
   background-color: rgba(0, 0, 0, 0.6);
-  height: 95%;
+  // height: 95%;
+  height: 45vh;
+  margin: 10px;
   width: 95%;
   display: flex;
   border-radius: 10px;
@@ -185,14 +192,12 @@
   margin: 5px 10px;
 }
 
-#tournament {
-}
-
 #group_div {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 #group_cover {
@@ -219,7 +224,7 @@
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 15px;
   float: left;
-  width: 46%;
+  width: 98%;
   margin: 2%;
   display: flex;
   justify-content: center;
@@ -234,8 +239,13 @@
 }
 
 .group_image {
-  max-height: 100px;
-  max-width: 100px;
+  min-height: 80px;
+  min-width: 80px;
+  max-height: 80px;
+  max-width: 80px;
+  height: auto;
+  width: auto;
+  max-width: inherit;
   height: auto;
   width: auto;
   border-radius: 10px;
@@ -262,3 +272,33 @@
   text-align: center;
 }
 
+@media screen and (min-width: 960px) {
+  #contents_body {
+    flex-flow: row;
+  }
+  #contents_left {
+    margin: 0;
+  }
+  
+  #contents_right {
+  }
+  
+  #contents_right_top {
+  }
+  
+  #contents_right_bottom {
+  }
+
+  #youtube_div {
+    width: 90%;
+  }
+
+  .group_cell {
+    width: 46%;
+    margin: 2%;
+  }
+}
+
+#tournament {
+  margin: 10px;
+}

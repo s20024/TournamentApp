@@ -11,7 +11,7 @@ class Can {
     this.data = document.data
     const group = document.group
     this.group = group
-    const howEx = this.howExponentiation(group.length, 0)
+    const howEx = this.howExponentiation(group.length)
     this.howEx = howEx
 
     const canvas = document.getElementById("tournament")
@@ -20,7 +20,7 @@ class Can {
     this.ctx = ctx
 
     const canvasWidth = window.innerWidth * 0.45
-    const canvasHeight = window.innerHeight * 0.5
+    const canvasHeight = window.innerHeight * 0.4
     this.canvasWidth = canvasWidth
     this.canvasHeight = canvasHeight
 
@@ -29,7 +29,10 @@ class Can {
       y: canvasHeight / 2
     }
 
-    const cameraZoom = 0.5
+    let cameraZoom = 0.5
+    if (window.innerWidth <= 960) {
+      cameraZoom = 0.3
+    }
     this.cameraZoom = cameraZoom
     this.MAX_ZOOM = 5
     this.MIN_ZOOM = 0.1
@@ -61,13 +64,18 @@ class Can {
     canvas.addEventListener("wheel", (e) => {e.preventDefault()})
     addEventListener("resize", this.resize.bind(this))
 
+    this.resize()
     this.draw()
   }
 
   resize() {
     console.log("resize")
-    const canvasWidth = window.innerWidth * 0.45
-    const canvasHeight = window.innerHeight * 0.5
+    let canvasWidth = window.innerWidth * 0.45
+    let canvasHeight = window.innerHeight * 0.4
+    if (window.innerWidth <= 960) {
+      canvasWidth = window.innerWidth * 0.65
+      canvasHeight = window.innerHeight * 0.3
+    }
 
     this.canvasWidth = canvasWidth
     this.canvasHeight = canvasHeight
@@ -116,12 +124,8 @@ class Can {
     }
   }
 
-  howExponentiation(x, c) {
-    if (parseInt(x / 2) === 0) {
-      return c
-    } else {
-      return this.howExponentiation(x / 2, c + 1)
-    }
+  howExponentiation(x) {
+    return (x - 1).toString(2).length
   }
 
   getEventLocation(e) {
@@ -190,7 +194,7 @@ class Can {
     }
   }
 
-  adjustZoom(zoomAmount, zoomFactoor) {
+  adjustZoom(zoomAmount, zoomFactor) {
     const isDragging = this.isDragging
     if (!isDragging) {
       if (zoomAmount) {

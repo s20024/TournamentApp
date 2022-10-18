@@ -41,7 +41,7 @@ function createLogHtml(logs) {
             from: ${log.name}
           </div>
           <div class="log_time">
-            time: ${log.time}
+            time: ${new Date(log.time).toISOString().split("T")[0].replaceAll("-", "/")}
           </div>
         </div>
         <div class="log_text">
