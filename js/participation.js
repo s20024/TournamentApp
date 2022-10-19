@@ -15,8 +15,9 @@ fetch(`${this.gasurl}?course=participation`)
       const name = tournament_data[1]
       const date = new Date(tournament_data[3]).toISOString().split("T")[0].replaceAll("-", "/")
       const img = `https://drive.google.com/uc?export=view&id=${tournament_data[2]}`
+      // https://docs.google.com/forms/d/e/1FAIpQLSeNhcjBKCI2EGSsYrpatpGCsnBbQjPTimUTB9iL7D3rqfyz8A/viewform?usp=pp_url&entry.2020560760=12345678&entry.80481633=%E3%81%A6%E3%81%99%E3%81%A8%E3%81%9F%E3%81%84%E3%81%8B%E3%81%84
       return ` \
-        <a href="./tournament/?id=${id}">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeNhcjBKCI2EGSsYrpatpGCsnBbQjPTimUTB9iL7D3rqfyz8A/viewform?usp=pp_url&entry.2020560760=${id}&entry.80481633=${name}">
         <div class="tournament_div fade_in">
             <div class="tournament_icon_div">
               <img class="tournament_icon" src="${img}">
