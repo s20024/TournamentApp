@@ -13,16 +13,18 @@ if (urlParams.has("id")) {
       if (res.result) {
         const date = new Date(res.data.day).toISOString().split("T")[0].replaceAll("-", "/")
 
+        const group = res.data.group.filter(g => (g["id"] !== ""))
         document.getElementById("tournament_image").src = `https://drive.google.com/uc?export=view&id=${res.data.image}`
         document.getElementById("tournament_title").innerHTML = res.data.tournament_name
         document.getElementById("contents_title_organizer").innerHTML = `主催者: ${res.data.name}`
         document.getElementById("contents_title_time").innerHTML = `日付: ${date}`
         document.getElementById("log_div").innerHTML = createLogHtml(res.data.log)
         document.getElementById("iframe").src = `https://www.youtube.com/embed/${res.data.youtube}`
-        document.getElementById("group_flag").outerHTML = createGroupHtml(res.data.group)
+        document.getElementById("group_flag").outerHTML = createGroupHtml(group)
         document.data = res.data
-        document.group_count = res.data.group.length
-        document.group = res.data.group
+        document.group_count = group.length
+        document.group = group
+        document.current_tournament = res.data.current_tournament
         // document.loading.start()
       } else {
         alert(res.message)
@@ -91,8 +93,8 @@ function createMenberHtml(menbers) {
 
 function loadImageCounter() {
   document.group_counter++
-  console.log(`${document.group_count} : ${document.group_counter}`)
-  if (document.group_count === document.group_counter) {
+  console.log(`${document.group_count} : ${document.group_counter} : ${document.current_tournament}`)
+  if (document.group_count === document.group_counter && document.current_tournament) {
     document.can.start()
   }
 }

@@ -49,7 +49,11 @@ class Can {
 
 
     this.canvas_groups = group.map((group_data, index) => {
-      return new TournamentCell(350, 100, tourtal_group_count, index, group_data.name, group_data.id, ctx, howEx, 0)
+      if (group_data !== {}) {
+        return new TournamentCell(350, 100, tourtal_group_count, group_data.index, group_data.name, group_data.id, ctx, howEx, 0)
+      } else {
+        return ""
+      }
     })
 
     document.canvas_groups = this.canvas_groups
@@ -101,7 +105,9 @@ class Can {
     // ここから表示の関数
     this.drawLine(this.howEx, this.howEx, 0, 0)
     this.canvas_groups.forEach(cell => {
-      cell.create()
+      if ( cell !== "") {
+        cell.create()
+      }
     })
     ctx.drawImage(this.trophy_image, -50, -50, 100, 100)
     // ここから表示の関数
