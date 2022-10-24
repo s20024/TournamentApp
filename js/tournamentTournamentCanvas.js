@@ -25,6 +25,7 @@ if (urlParams.has("id")) {
         document.group_count = group.length
         document.group = group
         document.current_tournament = res.data.current_tournament
+        document.content = res.data.content
         // document.loading.start()
       } else {
         alert(res.message)

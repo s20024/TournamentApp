@@ -19,6 +19,9 @@ class Can {
     const ctx = canvas.getContext("2d")
     this.ctx = ctx
 
+    const content = document.content
+    this.content = content
+
     const canvasWidth = window.innerWidth * 0.45
     const canvasHeight = window.innerHeight * 0.4
     this.canvasWidth = canvasWidth
@@ -70,6 +73,38 @@ class Can {
 
     this.resize()
     this.draw()
+    this.groupsSetWinCount(content)
+  }
+
+  groupsSetWinCount(content) {
+    const canvas_groups = this.canvas_groups
+    for (let i = 0; i < content.length; i++) {
+      const data = content[i]
+      if (data[2] !== -1) {
+        const winId = (data[2] === 0) ? data[0] : data[1]
+        console.log(winId)
+        for (let j = 0; j < canvas_groups.length; j++) {
+          const group = canvas_groups[j]
+          if (group.getGroupId() === winId) {
+            group.setUpWinCount()
+            break
+          }
+        }
+      }
+    }
+    /*
+    const canvas_groups = this.canvas_groups
+    content.forEach(data => {
+      canvas_groups.some(group => {
+        if (group.getGroupId() === data[0]) {
+          group.setUpWinCount()
+          return true
+        } else {
+          return false
+        }
+      })
+    })
+    */
   }
 
   resize() {

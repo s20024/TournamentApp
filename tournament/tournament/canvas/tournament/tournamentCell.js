@@ -46,6 +46,16 @@ class TournamentCell {
   setWinCount(winCount) {
     this.winCount = winCount
   }
+  getWincount(winCount) {
+    return this.winCount
+  }
+  setUpWinCount() {
+    this.winCount = this.winCount + 1
+  }
+
+  getGroupId() {
+    return this.group_id
+  }
 }
 
 export default TournamentCell
