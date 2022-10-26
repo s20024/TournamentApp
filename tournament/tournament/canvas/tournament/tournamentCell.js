@@ -58,4 +58,3 @@ class TournamentCell {
   }
 }
 
-export default TournamentCell

@@ -11,6 +11,7 @@ if (urlParams.has("id")) {
     .then(res => res.json())
     .then(res => {
       if (res.result) {
+        console.log(res)
         const date = new Date(res.data.day).toISOString().split("T")[0].replaceAll("-", "/")
 
         const group = res.data.group.filter(g => (g["id"] !== ""))
@@ -27,6 +28,13 @@ if (urlParams.has("id")) {
         document.current_tournament = res.data.current_tournament
         document.content = res.data.content
         // document.loading.start()
+        if (res.data.tournament_type === "トーナメント制") {
+          document.can = new Tournament()
+        } else if (res.data.tournament_type === "ポイント制") {
+          document.can = new Point()
+        } else if (res.data.tournament_type === "総当たり制") {
+        }
+
       } else {
         alert(res.message)
       }

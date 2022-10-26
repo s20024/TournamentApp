@@ -1,6 +1,6 @@
-console.log("load canvas/tournament.js")
+console.log("load canvas/point.js")
 
-class Tournament {
+class Point {
   constructor() {
   }
 
@@ -10,8 +10,6 @@ class Tournament {
     this.data = document.data
     const group = document.group
     this.group = group
-    const howEx = this.howExponentiation(group.length)
-    this.howEx = howEx
 
     const canvas = document.getElementById("tournament")
     this.canvas = canvas
@@ -20,7 +18,7 @@ class Tournament {
 
     const content = document.content
     this.content = content
-
+    
     const canvasWidth = window.innerWidth * 0.45
     const canvasHeight = window.innerHeight * 0.4
     this.canvasWidth = canvasWidth
@@ -45,17 +43,33 @@ class Tournament {
     this.initialPinchdistance = null
     this.lastZoom = cameraZoom
 
+    const colors = this.shuffle([
+      "#23ff17", "#6e1bff", "#ffb530",
+      "#ff1f91", "#ff24b6", "#4422ff",
+      "#f215ff", "#aa1bff", "#761aff"
+    ])
+
     const trophy_image = new Image()
     trophy_image.src = "../../images/trophy_gold.png"
     this.trophy_image = trophy_image
 
+    let maxPoint = 0
+    content.forEach(content_data => {
+      if (maxPoint < content_data[1]) {
+        maxPoint = content_data[1]
+      }
+    })
+
+    this.maxPoint = maxPoint
+
+    this.lineList = 
+      [1, 2, 3, 5, 10, 20, 30, 50, 100, 200, 300, 500, 1000, 2000, 3000]
+      .filter(count => (maxPoint / 20 <= count && count <= maxPoint * 1.5))
+
 
     this.canvas_groups = group.map((group_data, index) => {
-      if (group_data !== {}) {
-        return new TournamentCell(350, 100, tourtal_group_count, group_data.index, group_data.name, group_data.id, ctx, howEx, 0)
-      } else {
-        return ""
-      }
+      const color = colors[index % colors.length]
+      return new PointCell(350, 100, tourtal_group_count, index, group_data.name, group_data.id, ctx, maxPoint, color)
     })
 
     document.canvas_groups = this.canvas_groups
@@ -72,25 +86,19 @@ class Tournament {
 
     this.resize()
     this.draw()
-    this.groupsSetWinCount(content)
+    this.groupsSetPoint(content)
   }
 
-  groupsSetWinCount(content) {
-    const canvas_groups = this.canvas_groups
-    for (let i = 0; i < content.length; i++) {
-      const data = content[i]
-      if (data[2] !== -1) {
-        const winId = (data[2] === 0) ? data[0] : data[1]
-        console.log(winId)
-        for (let j = 0; j < canvas_groups.length; j++) {
-          const group = canvas_groups[j]
-          if (group.getGroupId() === winId) {
-            group.setUpWinCount()
-            break
-          }
+  groupsSetPoint(content) {
+    this.canvas_groups.forEach(group => {
+      for (let j = 0; j < content.length; j++) {
+        const con = content[j]
+        if (con[0] === group.getGroupId() && con[1] !== "") {
+          group.setPoint(con[1])
+          break
         }
       }
-    }
+    })
   }
 
   resize() {
@@ -124,35 +132,29 @@ class Tournament {
     ctx.clearRect(0, 0, canvasWidth, canvasHeight)
 
     // ここから表示の関数
-    this.drawLine(this.howEx, this.howEx, 0, 0)
+    this.drawLine(this.lineList, this.maxPoint)
     this.canvas_groups.forEach(cell => {
       if ( cell !== "") {
         cell.create()
       }
     })
-    ctx.drawImage(this.trophy_image, -50, -50, 100, 100)
+    // ctx.drawImage(this.trophy_image, -50, -50, 100, 100)
     // ここから表示の関数
     requestAnimationFrame( this.draw.bind(this))
   }
 
-  drawLine(count, now, x, y) {
+  drawLine(lineList, maxPoint) {
     const ctx = this.ctx
-    const width =  2 ** (now - 1) * 160
-    const half = width / 2
+    ctx.fillStyle = "#888888"
+    lineList.forEach(line => {
+      const x =  line / maxPoint * 500
+      this.drawRect(x - 1, 0, 3, 110 * this.group.length)
+      this.drawText(line.toString(), x - 10, -10, 25, "ikamodoki")
+    })
+    ctx.fillStyle = "#ff0000"
+    this.drawRect(500 - 1, 0, 3, 110 * this.group.length)
+    this.drawText("max", 500 - 10, -10, 25, "ikamodoki")
     ctx.fillStyle = "#000000"
-    ctx.fillRect(x - 2, y, 4, 125)
-    if (now !== 0) {
-      ctx.fillRect(x - half, y + 125, width, 4)
-      this.drawLine(count, now - 1, x - half, y + 125)
-      this.drawLine(count, now - 1, x + half, y + 125)
-      return
-    } else {
-      return
-    }
-  }
-
-  howExponentiation(x) {
-    return (x - 1).toString(2).length
   }
 
   getEventLocation(e) {
@@ -238,6 +240,15 @@ class Tournament {
       this.cameraZoom = Math.max(cameraZoom, MIN_ZOOM)
     }
   }
+
+  shuffle ([...array]) {
+    for (let i = array.length - 1; i >= 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]]
+    }
+    return array
+  }
+
 }
 
-// document.can = new Can() // tourtal_group_count, data, grou
+// document.can = new Point() // tourtal_group_count, data, grou
