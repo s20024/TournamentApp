@@ -10,7 +10,7 @@ const allHeight = Math.max(
 const mostBottom = allHeight - window.innerHeight
 window.addEventListener('scroll', ()=> {
   const scrollTop = window.pageYOffset || document.documentElement.scrollTop
-  if (scrollTop >= mostBottom && fade_contents) {
+  if (scrollTop + 10 >= mostBottom && fade_contents) {
     console.log("scroll down")
     fade_contents = false
     createContents(from_id, to_id)

@@ -1,7 +1,7 @@
 const from_id = "fade_out_div"
 const to_id = "contents_unnko"
 
-let fade_contents = true
+let scrolled = false
 let load_contents = false
 
 console.log("load tournament.js")
@@ -34,6 +34,10 @@ fetch(`${this.gasurl}?course=tournament`)
       `
     }).join("")
     fade_out_div.innerHTML = result
+    load_contents = true
+    if (scrolled && load_contents) {
+      createContents(from_id, to_id)
+    }
   })
 
 
@@ -45,9 +49,11 @@ const allHeight = Math.max(
 const mostBottom = allHeight - window.innerHeight
 window.addEventListener('scroll', ()=> {
   const scrollTop = window.pageYOffset || document.documentElement.scrollTop
-  if (scrollTop >= mostBottom && fade_contents) {
+  if (scrollTop + 10 >= mostBottom) {
     console.log("scroll down")
-    fade_contents = false
+    scrolled = true
+  }
+  if (scrolled && load_contents) {
     createContents(from_id, to_id)
   }
 })
