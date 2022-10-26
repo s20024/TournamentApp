@@ -25,12 +25,17 @@ class PointCell {
     const rectWidth = this.calcRectWidth(this.maxPoint, this.point)
 
     ctx.drawImage(this.image, x, y, size, size)
+
     ctx.fillStyle = "black"
-    this.drawText(this.group_name, fontX, y + 100, 100, "ikamodoki")
+    ctx.textAlign = "right"
+    this.drawText(this.group_name, -100, y + 100, 100, "ikamodoki")
+    ctx.textAlign = "left"
+
     ctx.fillStyle = this.color
     this.drawRect(0, y + 20, rectWidth, 60)
+
     ctx.fillStyle = "white"
-    this.drawText(this.point.toString(), 5, y + 80, 60, "ikamodoki")
+    this.drawText((this.point !== 0) ? this.point.toString() : "", 5, y + 80, 60, "ikamodoki")
   }
 
   calcX() {

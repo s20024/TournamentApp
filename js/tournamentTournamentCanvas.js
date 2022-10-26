@@ -21,7 +21,7 @@ if (urlParams.has("id")) {
         document.getElementById("contents_title_time").innerHTML = `日付: ${date}`
         document.getElementById("log_div").innerHTML = createLogHtml(res.data.log)
         document.getElementById("iframe").src = `https://www.youtube.com/embed/${res.data.youtube}`
-        document.getElementById("group_flag").outerHTML = createGroupHtml(group)
+        document.getElementById("group_flag").outerHTML = createGroupHtml(group, res.data.group_people)
         document.data = res.data
         document.group_count = group.length
         document.group = group
@@ -65,7 +65,7 @@ function createLogHtml(logs) {
   }).join("")
 }
 
-function createGroupHtml(groups) {
+function createGroupHtml(groups, group_people) {
   return groups.map(group => {
     return ` \
       <div class="group_cell">
@@ -83,18 +83,24 @@ function createGroupHtml(groups) {
           </div>
         </div>
         <div class="group_contents">
-          ${createMenberHtml(group.menber)}
+          ${createMenberHtml(group.menber, group_people)}
         </div>
       </div>
     `
   }).join("")
 }
 
-function createMenberHtml(menbers) {
-  return menbers.map(menber => {
+function createMenberHtml(menbers, group_people) {
+  const men = menbers
+  for (let i = 0; i < group_people; i++) {
+    men.push("")
+  }
+  return menbers.slice(0, group_people).map(menber => {
     return `\
       <div class="menber">
-        ${menber}
+        <div>
+          ${menber}
+        </div>
       </div>
     `
   }).join("")
