@@ -28,7 +28,7 @@ class Tournament {
 
     this.cameraOffset = {
       x: canvasWidth / 2,
-      y: canvasHeight / 2
+      y: -100
     }
 
     let cameraZoom = 0.5

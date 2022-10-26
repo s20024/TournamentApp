@@ -25,8 +25,10 @@ class Point {
     this.canvasHeight = canvasHeight
 
     this.cameraOffset = {
-      x: canvasWidth / 2,
-      y: canvasHeight / 2
+      x: 50,
+      y: -100
+      // x: canvasWidth / 2,
+      // y: canvasHeight / 2
     }
 
     let cameraZoom = 0.5
@@ -149,11 +151,11 @@ class Point {
     lineList.forEach(line => {
       const x =  line / maxPoint * 500
       this.drawRect(x - 1, 0, 3, 110 * this.group.length)
-      this.drawText(line.toString(), x - 10, -10, 25, "ikamodoki")
+      this.drawText(line.toString(), x - 10, -10, 25, '"ikamodoki", "paint", "rock"')
     })
     ctx.fillStyle = "#ff0000"
     this.drawRect(500 - 1, 0, 3, 110 * this.group.length)
-    this.drawText("max", 500 - 10, -10, 25, "ikamodoki")
+    this.drawText("max", 500 - 10, -10, 25, '"ikamodoki", "paint", "rock"')
     ctx.fillStyle = "#000000"
   }
 
