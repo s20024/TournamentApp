@@ -26,6 +26,7 @@ if (urlParams.has("id")) {
         document.group_count = group.length
         document.group = group
         document.current_tournament = res.data.current_tournament
+        document.finish_tournament = res.data.finish_tournament
         document.content = res.data.content
         // document.loading.start()
         if (res.data.tournament_type === "トーナメント制") {
@@ -109,7 +110,7 @@ function createMenberHtml(menbers, group_people) {
 function loadImageCounter() {
   document.group_counter++
   console.log(`${document.group_count} : ${document.group_counter} : ${document.current_tournament}`)
-  if (document.group_count === document.group_counter && document.current_tournament) {
+  if (document.group_count === document.group_counter && (document.current_tournament || document.finish_tournament)) {
     document.can.start()
   }
 }
