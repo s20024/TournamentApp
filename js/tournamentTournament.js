@@ -12,8 +12,8 @@ if (urlParams.has("id")) {
         const date = new Date(res.data.day).toISOString().split("T")[0].replaceAll("-", "/")
 
         document.getElementById("tournament_image").src = `https://drive.google.com/uc?export=view&id=${res.data.image}`
-        document.getElementById("tournament_title").innerHTML = res.data.tournament_name
-        document.getElementById("contents_title_organizer").innerHTML = `主催者: ${res.data.name}`
+        document.getElementById("tournament_title").innerHTML = encodeHTML(res.data.tournament_name)
+        document.getElementById("contents_title_organizer").innerHTML = `主催者: ${encodeHTML(res.data.name)}`
         document.getElementById("contents_title_time").innerHTML = `日付: ${date}`
         document.getElementById("log_div").innerHTML = createLogHtml(res.data.log)
         document.getElementById("iframe").src = `https://www.youtube.com/embed/${res.data.youtube}`
@@ -29,12 +29,14 @@ if (urlParams.has("id")) {
 }
 
 function createLogHtml(logs) {
+  const log_name_html = encodeHTML(log.name)
+  const log_message_html = encodeHTML(log.message)
   return logs.map(log => {
     return `\
       <div class="log_cell">
         <div class="log_cell_title">
           <div class="log_name">
-            from: ${log.name}
+            from: ${log_name_html}
           </div>
           <div class="log_time">
             time: ${new Date(log.time).toISOString().split("T")[0].replaceAll("-", "/")}
@@ -42,7 +44,7 @@ function createLogHtml(logs) {
         </div>
         <div class="log_text">
           <p>
-            ${log.message}
+            ${log_message_html}
           </p>
         </div>
       </div>
@@ -51,6 +53,7 @@ function createLogHtml(logs) {
 }
 
 function createGroupHtml(groups) {
+  const group_name_html = encodeHTML(group.name)
   return groups.map(group => {
     return ` \
       <div class="group_cell">
@@ -59,7 +62,7 @@ function createGroupHtml(groups) {
             <img src="https://drive.google.com/uc?export=view&id=${group.image}" class="group_image" id="image_${group.id}">
           </div>
           <div class="group_name">
-            ${group.name}
+            ${group_name_html}
           </div>
         </div>
         <div class="group_contents">
@@ -72,9 +75,10 @@ function createGroupHtml(groups) {
 
 function createMenberHtml(menbers) {
   return menbers.map(menber => {
+    const menber_html = encodeHTML(menber)
     return `\
       <div class="menber">
-        ${menber}
+        ${menber_html}
       </div>
     `
   }).join("")

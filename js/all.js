@@ -13,6 +13,7 @@ fetch(`${this.gasurl}?course=all`)
     const result = res.data.map(tournament_data => {
       const id = tournament_data[0]
       const name = tournament_data[1]
+      const name_html = (name.length <= 25) ? encodeHTML(name) : encodeHTML(name.slice(0, 22) + "...")
       const date = new Date(tournament_data[3]).toISOString().split("T")[0].replaceAll("-", "/")
       const img = `https://drive.google.com/uc?export=view&id=${tournament_data[2]}`
       return ` \
@@ -23,7 +24,7 @@ fetch(`${this.gasurl}?course=all`)
             </div>
             <div class="tournament_contents_div">
               <div class="tournament_contents_title">
-                ${name}
+                ${name_html}
               </div>
               <div class="tournament_contents_date">
                 ${date}

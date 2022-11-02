@@ -13,24 +13,25 @@ fetch(`${this.gasurl}?course=participation`)
     const result = res.data.map(tournament_data => {
       const id = tournament_data[0]
       const name = tournament_data[1]
+      const name_url = encodeURL(name)
+      const name_html = (name.length <= 25) ? encodeHTML(name) : encodeHTML(name.slice(0, 22) + "...")
       const date = new Date(tournament_data[3]).toISOString().split("T")[0].replaceAll("-", "/")
       const img = `https://drive.google.com/uc?export=view&id=${tournament_data[2]}`
-      // https://docs.google.com/forms/d/e/1FAIpQLSeNhcjBKCI2EGSsYrpatpGCsnBbQjPTimUTB9iL7D3rqfyz8A/viewform?usp=pp_url&entry.2020560760=12345678&entry.80481633=%E3%81%A6%E3%81%99%E3%81%A8%E3%81%9F%E3%81%84%E3%81%8B%E3%81%84
       return ` \
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeNhcjBKCI2EGSsYrpatpGCsnBbQjPTimUTB9iL7D3rqfyz8A/viewform?usp=pp_url&entry.2020560760=${id}&entry.80481633=${name}" target="_blank">
-        <div class="tournament_div fade_in">
-            <div class="tournament_icon_div">
-              <img class="tournament_icon" src="${img}">
-            </div>
-            <div class="tournament_contents_div">
-              <div class="tournament_contents_title">
-                ${name}
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeNhcjBKCI2EGSsYrpatpGCsnBbQjPTimUTB9iL7D3rqfyz8A/viewform?usp=pp_url&entry.2020560760=${id}&entry.80481633=${name_url}" target="_blank">
+          <div class="tournament_div fade_in">
+              <div class="tournament_icon_div">
+                <img class="tournament_icon" src="${img}">
               </div>
-              <div class="tournament_contents_date">
-                ${date}
+              <div class="tournament_contents_div">
+                <div class="tournament_contents_title">
+                  ${name_html}
+                </div>
+                <div class="tournament_contents_date">
+                  ${date}
+                </div>
               </div>
-            </div>
-        </div>
+          </div>
         </a>
       `
     }).join("")

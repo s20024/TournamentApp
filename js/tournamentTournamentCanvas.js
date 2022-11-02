@@ -16,8 +16,8 @@ if (urlParams.has("id")) {
 
         const group = res.data.group.filter(g => (g["id"] !== ""))
         document.getElementById("tournament_image").src = `https://drive.google.com/uc?export=view&id=${res.data.image}`
-        document.getElementById("tournament_title").innerHTML = res.data.tournament_name
-        document.getElementById("contents_title_organizer").innerHTML = `主催者: ${res.data.name}`
+        document.getElementById("tournament_title").innerHTML = encodeHTML(res.data.tournament_name)
+        document.getElementById("contents_title_organizer").innerHTML = `主催者: ${encodeHTML(res.data.name)}`
         document.getElementById("contents_title_time").innerHTML = `日付: ${date}`
         document.getElementById("log_div").innerHTML = createLogHtml(res.data.log)
         document.getElementById("iframe").src = `https://www.youtube.com/embed/${res.data.youtube}`
