@@ -10,7 +10,6 @@ class TournamentCell {
     this.ctx = ctx
     this.image = document.getElementById(this.group_tagid)
     this.howEx = howEx
-    this.now = howEx
     this.winCount = winCount
   }
 
@@ -20,16 +19,17 @@ class TournamentCell {
     const size = this.size
     const half = size / 2
 
-    const x = this.calcX(this.howEx, this.now, group_number)
-    const y = this.calcY(this.howEx)
+    const x = this.calcX(this.howEx, group_number, this.winCount)
+    const y = this.calcY(this.howEx, this.winCount)
 
+    this.drawWinLines(this.winCount)
     ctx.drawImage(this.image, x - half, y - half, size, size)
   }
 
-  calcX(howEx, now, group_number) {
+  calcX(howEx, group_number, winCount) {
     const by = group_number.toString(2).padStart(howEx, "0")
     let c = 0
-    for (let i = 0; i < (howEx - this.winCount); i++) {
+    for (let i = 0; i < (howEx - winCount); i++) {
       if (by[i] === "1") {
         c = c + 2 ** (howEx - (i + 1))
       } else {
@@ -39,8 +39,24 @@ class TournamentCell {
     return c * 80
   }
 
-  calcY(howEx) {
-    return (howEx + 1 - this.winCount) * 125
+  calcY(howEx, winCount) {
+    return (howEx + 1 - winCount) * 125
+  }
+
+  drawWinLines(count) {
+    if (count !== 0) {
+      const ctx = this.ctx
+      const x = this.calcX(this.howEx, this.group_number, count - 1)
+      const width = this.calcX(this.howEx, this.group_number, count) - x
+      const y = this.calcY(this.howEx, count)
+      ctx.fillStyle = "#990000"
+      ctx.fillRect(x - 3, y, 6, 125)
+      ctx.fillRect(x - 3, y, width + 6, 6)
+      ctx.fillStyle = "#000000"
+      if (count - 1 !== 0) {
+        this.drawWinLines(count - 1)
+      }
+    }
   }
 
   setWinCount(winCount) {
