@@ -1,0 +1,339 @@
+#header_div {
+  height: 15vh;
+}
+
+#contents_frame {
+  backdrop-filter: blur(5px);
+  border-radius: 30px;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+#contents_contents {
+  flex-flow: column;
+  width: 93%;
+  height: 100%;
+  overflow: auto;
+}
+
+.contents_title_contents {
+  padding: 0px 20px;
+}
+
+.contents_title_title_contents h1 {
+  margin: auto;
+}
+
+.contents_title_contents_contents {
+  display: flex;
+  justify-content: space-between;
+}
+
+#tournament_image {
+  min-height: 80px;
+  min-width: 80px;
+  max-height: 80px;
+  max-width: 80px;
+  height: auto;
+  width: auto;
+  max-width: inherit;
+}
+
+#contents_body {
+  display: flex;
+  flex-flow: column;
+}
+
+#contents_left {
+  flex: 6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+
+#contents_right {
+  flex: 4;
+  display: flex;
+  flex-flow: column;
+}
+
+#contents_right_top {
+  flex: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+#contents_right_bottom {
+  flex: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+#youtube_cover {
+  background-color: rgba(0, 0, 0, 0.6);
+  // height: 95%;
+  height: 250px;
+  width: 95%;
+  display: flex;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
+#youtube_cover_title {
+  color: white;
+  flex: 1;
+  text-align: center;
+  font-size: 20px;
+}
+
+#youtube_div {
+  background-image: url("../images/noyoutube.jpeg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 100%;
+  width: 95%;
+  flex: 9;
+  margin-bottom: 15px;
+}
+
+#iframe {
+  height: 100%;
+  width: 100%;
+}
+
+#log_cover {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 250px;
+  width: 95%;
+  display: flex;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
+#tournament_cover {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 95%;
+  // height: 45vh;
+  margin: 10px;
+  width: 95%;
+  display: flex;
+  border-radius: 10px;
+  justify-content: center;
+  padding: 10px, 20px;
+  flex-flow: column;
+}
+
+#log_cover_title {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  flex: 1;
+}
+
+#log_div {
+  background-color: white;
+  height: 95%;
+  width: 95%;
+  flex: 9;
+  margin-bottom: 10px;
+  overflow-y: scroll;
+}
+
+#log_input_form {
+  background-color: white;
+  width: 95%;
+  flex: 1;
+  margin-bottom: 10px;
+  font-size: 20px;
+  display: flex;
+}
+
+#log_input {
+  flex: 5;
+}
+
+#log_button {
+  flex: 1;
+}
+
+#tornament {
+  width: 800px;
+}
+
+#tournament_cover_title {
+  flex: 1;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+}
+
+#tournament_contents {
+  flex: 19;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#test_canvas {
+  width: 95%;
+  height: 95%;
+  background-color: blue;
+}
+
+.log_cell {
+  border-bottom: 1px solid black;
+}
+
+.log_cell_title {
+  display: flex;
+}
+
+.log_name {
+  flex: 5;
+  text-align: center;
+}
+
+.log_time {
+  flex: 5;
+  text-align: center;
+}
+
+.log_text p {
+  padding: 0;
+  margin: 5px 10px;
+}
+
+#group_div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#group_cover {
+  width: 97%;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
+#group_cover_title h1 {
+  color: white;
+  margin: 10px;
+}
+
+#group_cover_contents {
+  width: 95%;
+  margin: 10px;
+}
+
+.group_cell {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  float: left;
+  width: 98%;
+  margin: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
+.group_title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.group_image {
+  min-height: 80px;
+  min-width: 80px;
+  max-height: 80px;
+  max-width: 80px;
+  height: auto;
+  width: auto;
+  max-width: inherit;
+  height: auto;
+  width: auto;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.group_name {
+  margin: 0 10px;
+  font-size: 25px;
+}
+
+.group_contents {
+  width: 97%;
+  margin-bottom: 6px;
+}
+
+.menber {
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: 1px solid 1px;
+  float: left;
+  width: 48.6%;
+  height: 25px;
+  margin: 3px 0.7%;
+  vertical-align: middle;
+  display: flex;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 960px) {
+  #contents_body {
+    flex-flow: row;
+  }
+  #contents_left {
+    margin: 0;
+  }
+  
+  #contents_right {
+  }
+  
+  #contents_right_top {
+  }
+  
+  #contents_right_bottom {
+  }
+
+  #youtube_div {
+    width: 90%;
+  }
+
+  .group_cell {
+    width: 46%;
+    margin: 2%;
+  }
+}
+
+#tournament {
+  margin: 10px;
+}
+
+#target {
+  height: 0;
+  width: 0;
+  display: none;
+}

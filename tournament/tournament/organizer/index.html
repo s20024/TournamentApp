@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="../../../style/header.css" tyle="text/css">
     <link rel="stylesheet" href="../../../style/contents.css" tyle="text/css">
     <link rel="stylesheet" href="../../../style/footer.css" tyle="text/css">
-    <title>Tournament App TournamentEdit</title>
+    <link rel="stylesheet" href="../../../style/tournamentTournamentOrganizer.css" tyle="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.15.1/dist/phaser.min.js"></script>
+    <title>Tournament App Tournament Organizer</title>
   </head>
   <body>
     <div id="tournament_div" class="body_div">
@@ -23,7 +25,7 @@
               <h1>
                 <a class="text_purple" href="https://s20024.github.io/TournamentApp">TournamentApp</a>
                 <font class="text_white">  &gt;  </font>
-                <font class="text_blue">TournamentEdit</font>
+                <font class="text_blue">Organizer</font>
               </h1>
             </div>
     
@@ -33,7 +35,7 @@
                   <a href="../../../all" class="text_red">All</a>
                 </li>
                 <li class="header_contents_item">
-                  <a href="../../../make" class="text_green">Make</a>
+                  <a href="https://docs.google.com/forms/d/e/1FAIpQLScQFfXCLERw4ljrwOe1FPMrxHCQDMr3PXJXqJGocqYnIzpmQw/viewform?usp=sf_link" class="text_green" target="_blank">Make</a>
                 </li>
                 <li class="header_contents_item">
                   <a href="../../../participation" class="text_yellow">Participation</a>
@@ -54,10 +56,84 @@
       <div id="contents_div">
         <div id="contents_frame">
           <div id="contents_contents">
+            <div class="contents_title">
+              <img src="../../../images/no_image.jpeg" id="tournament_image">
+              <div class="contents_title_contents">
+                <h1 id="tournament_title"></h1>
+                <div class="contents_title_contents_contents">
+                  <div></div>
+                  <div class="contents_title_organizer" id="contents_title_organizer">
+                  </div>
+                  <div></div>
+                  <div class="contents_title_time" id="contents_title_time">
+                  </div>
+                  <div></div>
+                </div>
+              </div>
+            </div>
+            <div id="contents_body">
+              <div id="contents_left">
+                <div id="tournament_cover">
+                  <div id="tournament_cover_title">
+                    トーナメント
+                  </div>
+                  <div id="tournament_contents">
+                    <!-- <canvas id="test_canvas"></canvas> -->
+                    <canvas
+                      id="tournament"
+                      style="background-color: white">
+                    </canvas>
+                  </div>
+                </div>
+              </div>
+              <div id="contents_right">
+                <div id="contents_right_top">
+                  <div id="youtube_cover">
+                    <div id="youtube_cover_title">
+                      Youtube
+                    </div>
+                    <div id="youtube_div">
+                      <iframe
+                        id="iframe"
+                        src=""
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                      </iframe>
+                    </div>
+                  </div>
+                </div>
+                <div id="contents_right_bottom">
+                  <div id="log_cover">
+                    <div id="log_cover_title">
+                      Log
+                    </div>
+                    <div id="log_div">
+                    </div>
+                    <form action="" id="log_input_form" method="post" target="target">
+                      <input id="log_input" type="text"><button id="log_button">送信</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="edit_tournament">
+            </div>
+            <div id="group_div">
+              <div id="group_cover">
+                <div id="group_cover_title">
+                  <h1>参加者一覧</h1>
+                </div>
+                <div id="group_cover_contents">
+                  <div id="group_flag"></div>
+                </div>
+              </div>
+            </div>
             <!-- <ContentsFrame title={title} /> -->
           </div>
         </div>
       </div>
+      <iframe id="target" name="target"></iframe>
       <div>
         <footer id="footer">
           <div id="footer_inner">
@@ -100,7 +176,12 @@
     <iframe id="target" name="target" style="display: none;"></iframe>
     <div id="fade_out_div" class="fade_out">
     </div>
+    <script src="./canvas/tournament.js"></script>
+    <script src="./canvas/tournament/tournamentCell.js"></script>
+    <script src="./canvas/point.js"></script>
+    <script src="./canvas/point/pointCell.js"></script>
     <script src="../../../js/url.js"></script>
     <script src="../../../js/header.js"></script>
+    <script src="../../../js/tournamentTournamentOrganizer.js"></script>
   </body>
 </html>
