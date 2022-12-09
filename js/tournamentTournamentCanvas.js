@@ -5,6 +5,19 @@ const to_id = ""
 document.group_count = 0
 document.group_counter = 0
 
+document.getElementById("reload").addEventListener('click', () => {
+  reload()
+})
+
+function reload() {
+  fetch(`${this.gasurl}?course=tournamentData&id=${urlParams.get("id")}`)
+    .then(res => res.json())
+    .then(res => {
+      console.log(res)
+      document.can.groupsSetWinCount(res.data)
+    })
+}
+
 const urlParams = new URLSearchParams(window.location.search)
 if (urlParams.has("id")) {
   fetch(`${this.gasurl}?course=tournamentTournament&id=${urlParams.get("id")}`)

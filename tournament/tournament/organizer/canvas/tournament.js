@@ -5,6 +5,9 @@ class Tournament {
   }
 
   start() {
+    this.drawLineList= []
+    this.tournamentData = []
+    this.tournamentCount = 0
     const tourtal_group_count = document.group_count
     this.tourtal_group_count = tourtal_group_count
     this.data = document.data
@@ -77,6 +80,11 @@ class Tournament {
 
   groupsSetWinCount(content) {
     const canvas_groups = this.canvas_groups
+
+    for (let group of canvas_groups) {
+      group.setWinCount(0)
+    }
+
     for (let i = 0; i < content.length; i++) {
       const data = content[i]
       if (data[2] !== -1) {
@@ -124,7 +132,10 @@ class Tournament {
     ctx.clearRect(0, 0, canvasWidth, canvasHeight)
 
     // ここから表示の関数
-    this.drawLine(this.howEx, this.howEx, 0, 0)
+    // this.drawLine(this.howEx, this.howEx, 0, 0)
+    this.tournamentCount = 2 ** this.howEx - 1
+    this.drawLineList.push([this.howEx, this.howEx, 0, 0])
+    this.drawLine()
     this.canvas_groups.forEach(cell => {
       if ( cell !== "") {
         cell.create()
@@ -135,21 +146,58 @@ class Tournament {
     requestAnimationFrame( this.draw.bind(this))
   }
 
-  drawLine(count, now, x, y) {
+  drawLine() {
+    const drawLineList = this.drawLineList
+    this.drawLineList = []
     const ctx = this.ctx
-    const width =  2 ** (now - 1) * 160
-    const half = width / 2
     ctx.fillStyle = "#000000"
-    ctx.fillRect(x - 2, y, 4, 125)
-    if (now !== 0) {
-      ctx.fillRect(x - half, y + 125, width, 4)
-      this.drawLine(count, now - 1, x - half, y + 125)
-      this.drawLine(count, now - 1, x + half, y + 125)
-      return
+
+    for(let content of drawLineList) {
+      const count = content[0]
+      const now = content[1]
+      const x = content[2]
+      const y = content[3]
+
+      const width = 2 ** (content[1] - 1) * 160
+      const half = width / 2
+      ctx.fillRect(x - 2, y, 4, 125)
+      if (now !== 0) {
+        ctx.fillRect(x - half, y + 125, width, 4)
+        this.drawText(this.tournamentCount.toString(), x, y + 150 + 80, 60, '"ikamodoki", "paint", "rock"')
+        this.tournamentCount--
+        this.drawLineList.push([count, now - 1, x + half, y + 125])
+        this.drawLineList.push([count, now - 1, x - half, y + 125])
+      }
+    }
+    if (this.drawLineList.length !== 0) {
+      this.drawLine()
     } else {
       return
     }
   }
+
+    drawText(text, x, y, size, font) {
+    const ctx = this.ctx
+    ctx.font = `${size}px ${font}`
+    ctx.fillText(text, x, y)
+  }
+
+
+  // drawLine(count, now, x, y) {
+  //   const ctx = this.ctx
+  //   const width =  2 ** (now - 1) * 160
+  //   const half = width / 2
+  //   ctx.fillStyle = "#000000"
+  //   ctx.fillRect(x - 2, y, 4, 125)
+  //   if (now !== 0) {
+  //     ctx.fillRect(x - half, y + 125, width, 4)
+  //     this.drawLine(count, now - 1, x - half, y + 125)
+  //     this.drawLine(count, now - 1, x + half, y + 125)
+  //     return
+  //   } else {
+  //     return
+  //   }
+  // }
 
   howExponentiation(x) {
     return (x - 1).toString(2).length

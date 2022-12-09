@@ -77,6 +77,11 @@ class Tournament {
 
   groupsSetWinCount(content) {
     const canvas_groups = this.canvas_groups
+
+    for (let group of canvas_groups) {
+      group.setWinCount(0)
+    }
+
     for (let i = 0; i < content.length; i++) {
       const data = content[i]
       if (data[2] !== -1) {

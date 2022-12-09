@@ -88,10 +88,26 @@ class Point {
 
     this.resize()
     this.draw()
-    this.groupsSetPoint(content)
+    this.groupsSetWinCount(content)
   }
 
-  groupsSetPoint(content) {
+  groupsSetWinCount(content) {
+    this.content = content;
+    let maxPoint = 0
+    content.forEach(content_data => {
+      if (maxPoint < content_data[1]) {
+        maxPoint = content_data[1]
+      }
+    })
+
+    this.maxPoint = maxPoint
+
+    this.lineList = 
+      [1, 2, 3, 5, 10, 20, 30, 50, 100, 200, 300, 500, 1000, 2000, 3000]
+      .filter(count => (maxPoint / 20 <= count && count <= maxPoint * 1.5))
+
+    this.draw()
+
     this.canvas_groups.forEach(group => {
       for (let j = 0; j < content.length; j++) {
         const con = content[j]

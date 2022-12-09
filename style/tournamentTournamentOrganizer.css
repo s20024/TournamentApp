@@ -161,11 +161,16 @@
 }
 
 #log_input {
-  flex: 5;
+  flex: 15;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: "ikamodoki", "paint", "rock", "sans-serif";
 }
 
-#log_button {
-  flex: 1;
+#log_input_div {
+  width: 95%;
+  display: flex;
 }
 
 #tornament {
@@ -184,6 +189,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-flow: column;
+}
+
+.button_div {
+  background-color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  cursor: hand;
 }
 
 #test_canvas {
@@ -336,4 +351,107 @@
   height: 0;
   width: 0;
   display: none;
+}
+
+#edit_div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#edit_cover {
+  width: 97%;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  text-align: center;
+}
+
+#edit_tournament_button_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.match_div {
+  margin: 10px 3%;
+  width: 94%;
+  background-color: white;
+  border-radius: 15px;
+  display: flex;
+}
+
+.match_div_title {
+  font-size: 40px;
+}
+
+.match_div_title {
+  flex: 1;
+}
+
+.match_div_content {
+  flex: 5;
+  display: flex;
+}
+
+.match_div_content_group {
+  flex: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.match_div_content_img {
+  min-height: 50px;
+  min-width: 50px;
+  max-height: 50px;
+  max-width: 50px;
+  height: auto;
+  width: auto;
+  max-width: inherit;
+}
+
+.match_div_content_name {
+  font-size: 30px;
+  flex: 3;
+}
+
+.match_judge {
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.point_content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.point_input {
+  font-size: 20px;
+  height: 30px;
+  margin-right: 10px;
+  font-family: "ikamodoki", "paint", "rock", "sans-serif";
+}
+
+
+.win {
+  color: white;
+  padding: 5px;
+  margin: 0 10px;
+  background-color: rgba(255, 0, 0, 0.5);
+  border:1px solid rgba(255, 0, 0);
+  border-radius: 5px;
+}
+
+.lose {
+  color: white;
+  padding: 5px;
+  margin: 0 10px;
+  background-color: rgba(0, 0, 255, 0.5);
+  border:1px solid rgba(0, 0, 255);
+  border-radius: 5px;
 }

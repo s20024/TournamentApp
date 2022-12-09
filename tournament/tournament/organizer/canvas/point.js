@@ -88,10 +88,10 @@ class Point {
 
     this.resize()
     this.draw()
-    this.groupsSetPoint(content)
+    this.groupsSetWinCount(content)
   }
-
-  groupsSetPoint(content) {
+  
+  groupsSetWinCount(content) {
     this.canvas_groups.forEach(group => {
       for (let j = 0; j < content.length; j++) {
         const con = content[j]

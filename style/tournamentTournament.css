@@ -167,6 +167,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-flow: column;
+}
+
+#reload {
+  background-color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-bottom: 5px;
 }
 
 #test_canvas {
